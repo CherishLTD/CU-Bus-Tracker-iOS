@@ -30,6 +30,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var first = 0
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        print("hi")
         for route in routes {
             if route.id == 7 {
                 testRoute = route
@@ -41,11 +43,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         for stop in stopinfo  {
             if contains(testRoute.stops,stop.id) {
-            stopDict[stop.title] = stop
-            stops.append(stop.title)
+                stopDict[stop.title] = stop
+                stops.append(stop.title)
             }
         }
-        super.viewDidLoad()
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
