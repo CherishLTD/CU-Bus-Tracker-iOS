@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Options View Controller-->
         <scene sceneID="WvX-PR-i1R">
             <objects>
-                <viewController id="ZPf-rq-rQ5" sceneMemberID="viewController">
+                <viewController id="ZPf-rq-rQ5" customClass="OptionsViewController" customModule="BuffBus4" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yXW-Lz-6kG"/>
                         <viewControllerLayoutGuide type="bottom" id="KdP-kw-7nj"/>
@@ -16,91 +16,128 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buff Bus &amp; Hop Finder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neM-Ho-Tbk">
-                                <rect key="frame" x="214" y="91" width="172" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-gS-4jW">
-                                <rect key="frame" x="209" y="223" width="164" height="30.5"/>
-                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137" y="236" width="327" height="30.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="HOP Clockwise">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="3Qu-VI-zGH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30A-cA-ATi">
-                                <rect key="frame" x="208" y="270" width="167" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137" y="275" width="327" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="HOP Counter Clockwise">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="Qdz-0x-LId"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-Gg-Coh">
-                                <rect key="frame" x="208" y="315" width="167" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137" y="313" width="327" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Late Night Black">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="kck-Xd-d5v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HS4-11-kr8">
-                                <rect key="frame" x="208" y="364" width="167" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137" y="351" width="327" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Late Night Silver">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="f0d-l3-c2z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMX-aT-F5y">
-                                <rect key="frame" x="208" y="409" width="167" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137" y="389" width="327" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Late Night Gold">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="LVX-Nj-KDN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR0-n7-FFH">
-                                <rect key="frame" x="206" y="185" width="330" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="137" y="198" width="327" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Buff Bus">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="JBM-fL-uj9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Buff Bus &amp; Hop Finder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neM-Ho-Tbk">
+                                <rect key="frame" x="120" y="66" width="376" height="86"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="ExE-Gg-Coh" secondAttribute="centerX" id="46e-b2-6Gj"/>
-                            <constraint firstAttribute="centerX" secondItem="mR0-n7-FFH" secondAttribute="centerX" id="60t-mQ-7QT"/>
-                            <constraint firstItem="neM-Ho-Tbk" firstAttribute="top" secondItem="yXW-Lz-6kG" secondAttribute="bottom" constant="71" id="Cf0-3s-HqP"/>
-                            <constraint firstAttribute="centerX" secondItem="HS4-11-kr8" secondAttribute="centerX" id="LnU-0g-o2B"/>
-                            <constraint firstAttribute="centerX" secondItem="Awx-gS-4jW" secondAttribute="centerX" id="Nai-O0-sHb"/>
-                            <constraint firstAttribute="centerX" secondItem="yMX-aT-F5y" secondAttribute="centerX" id="NxH-21-npx"/>
-                            <constraint firstAttribute="centerX" secondItem="30A-cA-ATi" secondAttribute="centerX" id="Rn8-8a-fLi"/>
-                            <constraint firstItem="neM-Ho-Tbk" firstAttribute="centerX" secondItem="Ud4-aG-b3p" secondAttribute="centerX" id="nwn-ED-G0v"/>
+                            <constraint firstAttribute="centerX" secondItem="yMX-aT-F5y" secondAttribute="centerX" id="9R7-ht-bto"/>
+                            <constraint firstAttribute="centerX" secondItem="Awx-gS-4jW" secondAttribute="centerX" id="Edo-fE-mHz"/>
+                            <constraint firstAttribute="centerX" secondItem="mR0-n7-FFH" secondAttribute="centerX" id="MhO-e0-emO"/>
+                            <constraint firstAttribute="centerX" secondItem="30A-cA-ATi" secondAttribute="centerX" id="f6h-LG-6DL"/>
+                            <constraint firstAttribute="centerX" secondItem="ExE-Gg-Coh" secondAttribute="centerX" id="kAv-Zw-f4Y"/>
+                            <constraint firstAttribute="centerX" secondItem="HS4-11-kr8" secondAttribute="centerX" id="mOm-c5-YoG"/>
+                            <constraint firstAttribute="centerX" secondItem="neM-Ho-Tbk" secondAttribute="centerX" id="zXR-vg-fmZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buffButton" destination="mR0-n7-FFH" id="5Ca-fU-4eh"/>
+                        <outlet property="hopCButton" destination="Awx-gS-4jW" id="3dy-pA-yLx"/>
+                        <outlet property="hopCCButton" destination="30A-cA-ATi" id="GTl-Vd-R5q"/>
+                        <outlet property="lnbButton" destination="ExE-Gg-Coh" id="XsH-J3-CDF"/>
+                        <outlet property="lngButton" destination="yMX-aT-F5y" id="Qjd-ey-SLE"/>
+                        <outlet property="lnsButton" destination="HS4-11-kr8" id="hIa-Hw-LlH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7m-Ul-kXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +181,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nsW-dT-2av" firstAttribute="leading" secondItem="49N-Zc-lhm" secondAttribute="leading" id="LNF-v4-8cR"/>
                             <constraint firstAttribute="trailing" secondItem="nsW-dT-2av" secondAttribute="trailing" id="Reh-bK-AAT"/>

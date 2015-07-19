@@ -12,6 +12,7 @@ import CoreLocation
 import Foundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    
     var locationManager: CLLocationManager!
     
     @IBOutlet weak var timeLabel: UILabel!
