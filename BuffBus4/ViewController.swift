@@ -16,22 +16,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    
-    
-//    var stops = ["Bear Creek","Williams Village", "Engineering Center", "Duane", "C4C", "UMC","Math Building"]
-    
+
     var stopDict = [String: Stop]()
     var stops = [String]()
+    var routes = getRoutes()
+    var testRoute : Route!
+    
+    
     
     
     var initialLocation = CLLocation(latitude: 40.00373423, longitude: -105.2339187)
     var first = 0
     override func viewDidLoad() {
         
+        for route in routes {
+            if route.id == 7 {
+                testRoute = route
+                
+            }
+        }
+        
         var stopinfo = getStops()
         
         for stop in stopinfo  {
-            if stop.nextBusTimes.count > 1 {
+            if contains(testRoute.stops,stop.id) {
             stopDict[stop.title] = stop
             stops.append(stop.title)
             }
@@ -48,18 +56,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let url = NSURL(string: "http://www.stackoverflow.com")
         
-//        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-//            println(NSString(data: data, encoding: NSUTF8StringEncoding))
-//        }
-        
-//        task.resume()
-        
-        
-    var helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("getInfo"), userInfo: nil, repeats: true)
+        plotNewBuses()
+        var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
     }
 
-    
     
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
@@ -68,32 +69,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(coordinateRegion, animated: false)
     }
     
-    func plotBusses(Busses: [AnyObject]) {
-        
-    }
     
-    func getInfo()
+    func plotNewBuses()
     {
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)
         var busses = getBuses()
         for bus in busses {
-            if bus.nextStopID > 0 {
+            if bus.nextStopID > 0 && bus.routeID == testRoute {
                 mapView.addAnnotation(bus)
             }
             
         }
         var stops2 = getStops()
         for stop in stops2 {
-            if stop.nextBusTimes.count > 1 {
+            if contains(testRoute.stops,stop.id) {
                 mapView.addAnnotation(stop)
             }
         }
     }
-    
-    
-   
- 
-    
 }
 
