@@ -12,15 +12,14 @@ import MapKit
 
 func getBusses() -> [Bus] {
     
-    var req = getJSON("http://104.131.176.10:8080")
+    var req = getJSON("http://104.131.176.10:8080/buses")
     var busses = [Bus]()
     
     var jsonError: NSError?
-    if let json = NSJSONSerialization.JSONObjectWithData(req, options: nil, error: &jsonError) as? [String: AnyObject]
+    if let json = NSJSONSerialization.JSONObjectWithData(req, options: nil, error: &jsonError) as? [[String: AnyObject]]
         //        var BusInfo = json["BusInfo"] as? [String: AnyObject] {
     {
-        if let BusInfo = json["BusInfo"] as? [[String: AnyObject]] {
-            println(BusInfo)
+        let BusInfo = json
             for bus in BusInfo {
                 var b = Bus(title: bus["equipmentID"] as! String,
                     locationName:"Soon",
@@ -34,15 +33,8 @@ func getBusses() -> [Bus] {
                 
             }
         }
-        
-    }
-    else {
-        println("NO")
-    }
     
     return busses
-    
-    
 }
 
 

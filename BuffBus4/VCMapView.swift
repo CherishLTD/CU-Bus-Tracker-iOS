@@ -29,4 +29,12 @@ extension ViewController: MKMapViewDelegate {
         }
         return nil
     }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        initialLocation = locations[0] as! CLLocation
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println(error)
+    }
 }

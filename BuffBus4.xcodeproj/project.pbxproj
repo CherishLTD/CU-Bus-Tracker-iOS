@@ -16,6 +16,11 @@
 		2EBB7F4D1B54A9230066D730 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB7F4C1B54A9230066D730 /* Bus.swift */; };
 		2EBB7F4F1B54AACB0066D730 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */; };
 		2EBB7F511B54BC1D0066D730 /* BusInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */; };
+		2EF4240F1B59DAF900F65A2C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF4240E1B59DAF900F65A2C /* Route.swift */; };
+		2EF424111B59DC7400F65A2C /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424101B59DC7400F65A2C /* Stop.swift */; };
+		2EF424131B59DDD800F65A2C /* StopInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */; };
+		2EF424151B59F1A600F65A2C /* RouteInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */; };
+		2EF424171B59F3E200F65A2C /* VCPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424161B59F3E200F65A2C /* VCPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		2EBB7F4C1B54A9230066D730 /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusInfoGetter.swift; sourceTree = "<group>"; };
+		2EF4240E1B59DAF900F65A2C /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		2EF424101B59DC7400F65A2C /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopInfoGetter.swift; sourceTree = "<group>"; };
+		2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteInfoGetter.swift; sourceTree = "<group>"; };
+		2EF424161B59F3E200F65A2C /* VCPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +95,13 @@
 			children = (
 				2E4709F11B51AD6000E95354 /* AppDelegate.swift */,
 				2E4709F31B51AD6000E95354 /* ViewController.swift */,
+				2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */,
 				2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */,
+				2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */,
+				2EF424101B59DC7400F65A2C /* Stop.swift */,
+				2EF4240E1B59DAF900F65A2C /* Route.swift */,
 				2EBB7F4C1B54A9230066D730 /* Bus.swift */,
+				2EF424161B59F3E200F65A2C /* VCPickerView.swift */,
 				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
 				2E4709F51B51AD6000E95354 /* Main.storyboard */,
 				2E4709F81B51AD6000E95354 /* Images.xcassets */,
@@ -170,6 +185,7 @@
 				TargetAttributes = {
 					2E4709EB1B51AD6000E95354 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Z8855G96A3;
 					};
 					2E470A001B51AD6000E95354 = {
 						CreatedOnToolsVersion = 6.4;
@@ -221,9 +237,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EF424151B59F1A600F65A2C /* RouteInfoGetter.swift in Sources */,
+				2EF424111B59DC7400F65A2C /* Stop.swift in Sources */,
 				2EBB7F511B54BC1D0066D730 /* BusInfoGetter.swift in Sources */,
+				2EF424171B59F3E200F65A2C /* VCPickerView.swift in Sources */,
 				2EBB7F4F1B54AACB0066D730 /* VCMapView.swift in Sources */,
 				2EBB7F4D1B54A9230066D730 /* Bus.swift in Sources */,
+				2EF424131B59DDD800F65A2C /* StopInfoGetter.swift in Sources */,
+				2EF4240F1B59DAF900F65A2C /* Route.swift in Sources */,
 				2E4709F41B51AD6000E95354 /* ViewController.swift in Sources */,
 				2E4709F21B51AD6000E95354 /* AppDelegate.swift in Sources */,
 			);
@@ -352,9 +373,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -362,9 +386,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

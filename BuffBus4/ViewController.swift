@@ -15,14 +15,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
     
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var stopLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
     
-    var stops = ["Bear Creek","Williams Village", "Engineering Center", "Duane", "C4C", "UMC","Math Building"]
+//    var stops = ["Bear Creek","Williams Village", "Engineering Center", "Duane", "C4C", "UMC","Math Building"]
+    
+    var stopDict = [String: Stop]()
+    var stops = [String]()
+    
+    
     var initialLocation = CLLocation(latitude: 40.00373423, longitude: -105.2339187)
     var first = 0
     override func viewDidLoad() {
+        
+        var stopinfo = getStops()
+        
+        for stop in stopinfo  {
+            if stop.nextBusTimes.count > 1 {
+            stopDict[stop.title] = stop
+            stops.append(stop.title)
+            }
+        }
         super.viewDidLoad()
         
         locationManager = CLLocationManager()
@@ -42,36 +55,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //        task.resume()
         
         
-        var helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("sayHello"), userInfo: nil, repeats: true)
+        var helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("getInfo"), userInfo: nil, repeats: true)
 
         
 
         
     }
 
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stops.count;
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return stops[row]
-    }
-  
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        stopLabel.text = stops[row]
-    }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        initialLocation = locations[0] as! CLLocation
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println(error)
-    }
     
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
@@ -84,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func sayHello()
+    func getInfo()
     {
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)
@@ -92,6 +83,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         for bus in busses {
             if bus.nextStopID > 0 {
                 mapView.addAnnotation(bus)
+            }
+            
+        }
+        var stops2 = getStops()
+        for stop in stops2 {
+            if stop.nextBusTimes.count > 1 {
+                mapView.addAnnotation(stop)
             }
         }
     }
