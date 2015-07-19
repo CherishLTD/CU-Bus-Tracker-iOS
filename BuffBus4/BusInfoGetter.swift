@@ -10,10 +10,10 @@ import Foundation
 import MapKit
 
 
-func getBusses() -> [Bus] {
+func getBuses() -> [Bus] {
     
     var req = getJSON("http://104.131.176.10:8080/buses")
-    var busses = [Bus]()
+    var buses = [Bus]()
     
     var jsonError: NSError?
     if let json = NSJSONSerialization.JSONObjectWithData(req, options: nil, error: &jsonError) as? [[String: AnyObject]]
@@ -29,12 +29,12 @@ func getBusses() -> [Bus] {
                     nextStopID: bus["nextStopID"] as! Int,
                     inService: true
                 )
-                busses.append(b)
+                buses.append(b)
                 
             }
         }
     
-    return busses
+    return buses
 }
 
 
