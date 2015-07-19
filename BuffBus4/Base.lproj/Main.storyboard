@@ -24,8 +24,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-gS-4jW">
                                 <rect key="frame" x="209" y="223" width="164" height="30.5"/>
+                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="HOP Clockwise">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="3Qu-VI-zGH"/>
@@ -33,8 +35,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30A-cA-ATi">
                                 <rect key="frame" x="208" y="270" width="167" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="HOP Counter Clockwise">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="Qdz-0x-LId"/>
@@ -42,8 +46,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-Gg-Coh">
                                 <rect key="frame" x="208" y="315" width="167" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Late Night Black">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="kck-Xd-d5v"/>
@@ -51,8 +57,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HS4-11-kr8">
                                 <rect key="frame" x="208" y="364" width="167" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Late Night Silver">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="f0d-l3-c2z"/>
@@ -60,17 +68,21 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMX-aT-F5y">
                                 <rect key="frame" x="208" y="409" width="167" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Late Night Gold">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="LVX-Nj-KDN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR0-n7-FFH">
-                                <rect key="frame" x="206" y="185" width="169" height="30"/>
+                                <rect key="frame" x="206" y="185" width="330" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.95734643780212625" blue="0.67919171525294342" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Buff Bus">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="JBM-fL-uj9"/>
@@ -92,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7m-Ul-kXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-418" y="218"/>
+            <point key="canvasLocation" x="-514" y="248"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
