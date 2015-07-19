@@ -76,7 +76,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     {
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)
-        var busses = getBusses()
+        var busses = getBuses()
         for bus in busses {
             if bus.nextStopID > 0 {
                 mapView.addAnnotation(bus)

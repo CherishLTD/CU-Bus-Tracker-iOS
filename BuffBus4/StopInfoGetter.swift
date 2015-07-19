@@ -19,7 +19,6 @@ func getStops() -> [Stop] {
     if let json = NSJSONSerialization.JSONObjectWithData(req, options: nil, error: &jsonError) as? [[String: AnyObject]]
     {
         let StopInfo = json
-        println(StopInfo)
         for stop in StopInfo {
             
             if let nextBusTimes = stop["nextBusTimes"] as?  [Int] {
@@ -31,7 +30,6 @@ func getStops() -> [Stop] {
                 stops.append(b)
             }
             else {
-                println("YES")
                 var b = Stop(title: stop["name"] as! String,
                     id:stop["id"] as! Int,
                     coordinate: CLLocationCoordinate2D(latitude: stop["lat"] as! Double, longitude:stop["lng"] as! Double),
