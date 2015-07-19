@@ -2,7 +2,7 @@
 //  VCMapView.swift
 //  BuffBus4
 //
-//  Created by Joshua Ferge on 7/13/15.
+//  Created by Joshua Ferge on 7/13/15. 
 //  Copyright (c) 2015 Joshua Ferge. All rights reserved.
 //
 

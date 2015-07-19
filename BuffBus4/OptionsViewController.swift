@@ -19,5 +19,18 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var lnsButton: UIButton!
     @IBOutlet weak var lngButton: UIButton!
     
+    @IBAction func scanButton (sender: UIButton!) {
+        performSegueWithIdentifier("ViewController", sender: self)
+    }
     
+    override func viewDidLoad() {
+    hopCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+    }
+    
+   func buttonClicked(_ sender: AnyObject?) {
+    print("Hello world")
+    //presentViewController(ViewController(), animated: true, completion: nil)
+    performSegueWithIdentifier("mainSegue", sender: nil)
+
+    }
 }
