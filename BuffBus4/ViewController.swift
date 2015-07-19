@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var stops = [String]()
     var routes = getRoutes()
     var testRoute : Route!
+    var routeNumber = 0
     
     
     
@@ -31,9 +32,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        print("hi")
+        println("hi")
+        println(routeNumber)
         for route in routes {
-            if route.id == 7 {
+            if route.id == routeNumber {
                 testRoute = route
                 
             }

@@ -11,6 +11,7 @@ import UIKit
 
 
 class OptionsViewController: UIViewController {
+    var routeNumber: Int!
 
     @IBOutlet weak var buffButton: UIButton!
     @IBOutlet weak var hopCButton: UIButton!
@@ -24,13 +25,40 @@ class OptionsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-    hopCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        hopCButton.tag = 6
+        hopCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        hopCCButton.tag = 7
+        hopCCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        buffButton.tag = 1
+        buffButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
     }
     
-   func buttonClicked(_ sender: AnyObject?) {
+    
+    func buttonClicked( sender: AnyObject?) {
     print("Hello world")
     //presentViewController(ViewController(), animated: true, completion: nil)
-    performSegueWithIdentifier("mainSegue", sender: nil)
+        if sender!.tag == 6 {
+            routeNumber = 6
+        }
+        if sender!.tag == 7 {
+            routeNumber = 7
+        }
+        if sender!.tag == 1 {
+            routeNumber = 1
+        }
+    performSegueWithIdentifier("mainSegue", sender: self)
 
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let identifier = segue.identifier as String!
+
+        if segue.identifier == "mainSegue" {
+            if let destination = segue.destinationViewController as? ViewController {
+                println("FUCK")
+                destination.routeNumber = routeNumber
+            }
+        }
     }
 }
