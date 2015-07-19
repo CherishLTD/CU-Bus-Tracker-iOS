@@ -29,7 +29,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var initialLocation = CLLocation(latitude: 40.00373423, longitude: -105.2339187)
     var first = 0
     override func viewDidLoad() {
-        print("Hello there fine world")
+        
         for route in routes {
             if route.id == 7 {
                 testRoute = route
