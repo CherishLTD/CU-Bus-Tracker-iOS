@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -16,38 +16,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neM-Ho-Tbk">
-                                <rect key="frame" x="279" y="91" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buff Bus &amp; Hop Finder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neM-Ho-Tbk">
+                                <rect key="frame" x="214" y="91" width="172" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-gS-4jW">
-                                <rect key="frame" x="206" y="192" width="164" height="108"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="164" id="Xkj-Ij-2Dh"/>
-                                </constraints>
-                                <state key="normal" title="HOP">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Awx-gS-4jW">
+                                <rect key="frame" x="209" y="223" width="164" height="30.5"/>
+                                <state key="normal" title="HOP Clockwise">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="3Qu-VI-zGH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30A-cA-ATi">
+                                <rect key="frame" x="208" y="270" width="167" height="30"/>
+                                <state key="normal" title="HOP Counter Clockwise">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="Qdz-0x-LId"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-Gg-Coh">
+                                <rect key="frame" x="208" y="315" width="167" height="30"/>
+                                <state key="normal" title="Late Night Black">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="kck-Xd-d5v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HS4-11-kr8">
+                                <rect key="frame" x="208" y="364" width="167" height="30"/>
+                                <state key="normal" title="Late Night Silver">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="f0d-l3-c2z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMX-aT-F5y">
+                                <rect key="frame" x="208" y="409" width="167" height="30"/>
+                                <state key="normal" title="Late Night Gold">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="LVX-Nj-KDN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR0-n7-FFH">
+                                <rect key="frame" x="206" y="185" width="169" height="30"/>
+                                <state key="normal" title="Buff Bus">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="JBM-fL-uj9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ExE-Gg-Coh" secondAttribute="centerX" id="46e-b2-6Gj"/>
+                            <constraint firstAttribute="centerX" secondItem="mR0-n7-FFH" secondAttribute="centerX" id="60t-mQ-7QT"/>
                             <constraint firstItem="neM-Ho-Tbk" firstAttribute="top" secondItem="yXW-Lz-6kG" secondAttribute="bottom" constant="71" id="Cf0-3s-HqP"/>
-                            <constraint firstItem="Awx-gS-4jW" firstAttribute="leading" secondItem="Ud4-aG-b3p" secondAttribute="leading" constant="206" id="Eqb-hM-vD8"/>
-                            <constraint firstItem="KdP-kw-7nj" firstAttribute="top" secondItem="Awx-gS-4jW" secondAttribute="bottom" constant="300" id="aSE-Vn-YJW"/>
-                            <constraint firstItem="Awx-gS-4jW" firstAttribute="top" secondItem="neM-Ho-Tbk" secondAttribute="bottom" constant="80" id="blz-fy-hh5"/>
+                            <constraint firstAttribute="centerX" secondItem="HS4-11-kr8" secondAttribute="centerX" id="LnU-0g-o2B"/>
+                            <constraint firstAttribute="centerX" secondItem="Awx-gS-4jW" secondAttribute="centerX" id="Nai-O0-sHb"/>
+                            <constraint firstAttribute="centerX" secondItem="yMX-aT-F5y" secondAttribute="centerX" id="NxH-21-npx"/>
+                            <constraint firstAttribute="centerX" secondItem="30A-cA-ATi" secondAttribute="centerX" id="Rn8-8a-fLi"/>
                             <constraint firstItem="neM-Ho-Tbk" firstAttribute="centerX" secondItem="Ud4-aG-b3p" secondAttribute="centerX" id="nwn-ED-G0v"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7m-Ul-kXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-231" y="174"/>
+            <point key="canvasLocation" x="-418" y="218"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -105,4 +150,7 @@
             </objects>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kck-Xd-d5v"/>
+    </inferredMetricsTieBreakers>
 </document>

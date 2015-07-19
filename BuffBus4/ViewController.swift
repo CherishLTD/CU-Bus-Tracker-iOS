@@ -55,10 +55,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //        task.resume()
         
         
-        var helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("getInfo"), userInfo: nil, repeats: true)
-
-        
-
+    var helloWorldTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("getInfo"), userInfo: nil, repeats: true)
         
     }
 
