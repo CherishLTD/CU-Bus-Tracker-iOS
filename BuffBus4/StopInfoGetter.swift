@@ -33,7 +33,7 @@ func getStops() -> [Stop] {
                 var b = Stop(title: stop["name"] as! String,
                     id:stop["id"] as! Int,
                     coordinate: CLLocationCoordinate2D(latitude: stop["lat"] as! Double, longitude:stop["lng"] as! Double),
-                    nextBusTimes: [-1]
+                    nextBusTimes: [-1, -2]
                 )
                 stops.append(b)
                 

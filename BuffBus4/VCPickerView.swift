@@ -26,7 +26,9 @@ extension ViewController {
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        timeLabel.text = String(stopDict[stops[row]]!.nextBusTimes[0])
+        
+        timeLabel.text = String(stopDict[stops[row]]!.nextBusTimes[0]) + " Minutes"
+        timeLabel2.text = String(stopDict[stops[row]]!.nextBusTimes[1]) + " Minutes"
     }
     
 
