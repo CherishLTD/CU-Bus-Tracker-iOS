@@ -8,6 +8,8 @@
 
 import Foundation
 import MapKit
+import UIKit
+
 
 extension ViewController: MKMapViewDelegate {
     
@@ -24,9 +26,18 @@ extension ViewController: MKMapViewDelegate {
             else {
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
+                var image: UIImage? = UIImage(named: "nikcy.jpg")
+                if image != nil {
+                    println("yay")
+                }
+                
+                view.image = UIImage(named: "nikcy.jpg")
+
+
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
-            }
+        
+            println("end")
             return view
         }
         return nil

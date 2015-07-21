@@ -12,6 +12,7 @@ import MapKit
 
 class Bus: NSObject, MKAnnotation {
     let title: String
+    let subtitle: String
     let locationName: String
     let coordinate: CLLocationCoordinate2D
     let routeID: Int
@@ -28,13 +29,9 @@ class Bus: NSObject, MKAnnotation {
         self.EquipmentID = EquipmentID
         self.nextStopID = nextStopID
         self.inService = inService
-        
+        self.subtitle = locationName
         super.init()
         
-    }
-
-    var subtitle: String {
-        return locationName
     }
     
 }

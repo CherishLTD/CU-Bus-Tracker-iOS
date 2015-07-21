@@ -19,7 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var timeLabel2: UILabel!
-
+    
     var stopDict = [String: Stop]()
     var stops = [String]()
     var routes = getRoutes()
@@ -30,6 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var initialLocation = CLLocation(latitude: 40.00373423, longitude: -105.2339187)
     var first = 0
     override func viewDidLoad() {
+        mapView.delegate = self
         
         super.viewDidLoad()
         
