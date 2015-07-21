@@ -277,6 +277,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="UIPicker" destination="nsW-dT-2av" id="ibG-NE-evi"/>
                         <outlet property="mapView" destination="49N-Zc-lhm" id="bBe-ZX-bne"/>
                         <outlet property="timeLabel" destination="ncl-iv-u2X" id="PbI-Ze-r6x"/>
                         <outlet property="timeLabel2" destination="4zL-aW-Elz" id="adG-W9-shj"/>

@@ -15,6 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     
+    @IBOutlet weak var UIPicker: UIPickerView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var timeLabel2: UILabel!
@@ -31,7 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
         for route in routes {
             if route.id == routeNumber {
                 testRoute = route
@@ -56,13 +57,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.showsUserLocation = true
         centerMapOnLocation(initialLocation)
         
-        let url = NSURL(string: "http://www.stackoverflow.com")
-        
         plotNewBuses()
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        UIPicker.selectRow(5, inComponent: 0, animated: true)
+    }
     
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
