@@ -13,22 +13,25 @@ import UIKit
 
 extension ViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        if let annotation = annotation as? Bus {
-            let identifier = "pin"
+        if let annotation = annotation as? MKAnnotation  {
+            let identifier = "test"
             var view: MKAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
-                as? MKAnnotationView {
-                dequeuedView.annotation = annotation
-                view = dequeuedView
-            }
-            else {
-                var image = UIImage(contentsOfFile: "nikcy.jpg")
+
+                println("ijijij")
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
-                view.image = image
+                var image: UIImage? = UIImage(named: "nikcy.jpg")
+                if image != nil {
+                    println("yay")
+                }
+                
+                view.image = UIImage(named: "nikcy.jpg")
+
+
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
-            }
+        
+            println("end")
             return view
         }
         return nil
