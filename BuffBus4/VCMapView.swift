@@ -17,7 +17,7 @@ extension ViewController: MKMapViewDelegate {
             let identifier = "test"
             var view: MKAnnotationView
 
-                println("ijijij")
+                println("ijdijij")
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
                 var image: UIImage? = UIImage(named: "nikcy.jpg")
