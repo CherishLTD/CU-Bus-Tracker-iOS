@@ -8,20 +8,24 @@
 
 import Foundation
 import MapKit
+import UIKit
+
 
 extension ViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if let annotation = annotation as? Bus {
             let identifier = "pin"
-            var view: MKPinAnnotationView
+            var view: MKAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
-                as? MKPinAnnotationView {
+                as? MKAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             }
             else {
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                var image = UIImage(contentsOfFile: "nikcy.jpg")
+                view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
+                view.image = image
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
             }
