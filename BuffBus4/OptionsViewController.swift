@@ -25,6 +25,7 @@ class OptionsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         hopCButton.tag = 6
         hopCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         hopCCButton.tag = 7
