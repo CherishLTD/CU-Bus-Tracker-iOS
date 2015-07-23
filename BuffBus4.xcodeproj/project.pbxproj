@@ -23,6 +23,7 @@
 		2EF424171B59F3E200F65A2C /* VCPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424161B59F3E200F65A2C /* VCPickerView.swift */; };
 		43135C791B5DFED100724395 /* nikcy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43135C781B5DFED100724395 /* nikcy.jpg */; };
 		43B21A371B5B45750059BFCC /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B21A361B5B45750059BFCC /* OptionsViewController.swift */; };
+		43C614311B609395009B5B44 /* bus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43C614301B609395009B5B44 /* bus.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		2EF424161B59F3E200F65A2C /* VCPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPickerView.swift; sourceTree = "<group>"; };
 		43135C781B5DFED100724395 /* nikcy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nikcy.jpg; sourceTree = "<group>"; };
 		43B21A361B5B45750059BFCC /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		43C614301B609395009B5B44 /* bus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bus.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2EF4240E1B59DAF900F65A2C /* Route.swift */,
 				2EBB7F4C1B54A9230066D730 /* Bus.swift */,
 				43135C781B5DFED100724395 /* nikcy.jpg */,
+				43C614301B609395009B5B44 /* bus.jpg */,
 				2EF424161B59F3E200F65A2C /* VCPickerView.swift */,
 				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
 				2E4709F51B51AD6000E95354 /* Main.storyboard */,
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C614311B609395009B5B44 /* bus.jpg in Resources */,
 				2E4709F71B51AD6000E95354 /* Main.storyboard in Resources */,
 				2E4709FC1B51AD6000E95354 /* LaunchScreen.xib in Resources */,
 				43135C791B5DFED100724395 /* nikcy.jpg in Resources */,
