@@ -58,9 +58,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
-        centerMapOnLocation(initialLocation)
+        
         
         plotNewBuses()
+
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
     }
@@ -73,7 +74,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-            regionRadius * 5.0, regionRadius * 5.0)
+            regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: false)
     }
     

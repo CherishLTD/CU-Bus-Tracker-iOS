@@ -70,7 +70,6 @@ class OptionsViewController: UIViewController {
 
         if segue.identifier == "mainSegue" {
             if let destination = segue.destinationViewController as? ViewController {
-                println("FUCK")
                 destination.routeNumber = routeNumber
             }
         }

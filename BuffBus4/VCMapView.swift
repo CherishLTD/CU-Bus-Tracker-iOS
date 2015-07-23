@@ -20,6 +20,15 @@ extension ViewController: MKMapViewDelegate {
             return nil;
         }
         
+      
+            
+//            var loc1 = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+//            var loc2 = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+//            
+//            
+//            let distance = loc1.distanceFromLocation(loc2)
+//            println(distance)
+            
             let identifier = "test"
             var view: MKAnnotationView
 
@@ -28,8 +37,6 @@ extension ViewController: MKMapViewDelegate {
       
         var isBus = false
         for bus in buses {
-            println(bus.title)
-            println(annotation.title!)
             if bus.title == annotation.title! {
                 view.image = UIImage(named: "bus.jpg")
                 isBus = true
@@ -50,6 +57,11 @@ extension ViewController: MKMapViewDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         initialLocation = locations[0] as! CLLocation
+        if first == 0 {
+            centerMapOnLocation(initialLocation)
+            first = first+1
+        }
+        
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
