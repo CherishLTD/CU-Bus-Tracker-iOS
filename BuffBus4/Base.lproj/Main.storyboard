@@ -128,8 +128,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select Stop:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uub-Nc-dZl">
-                                <rect key="frame" x="257" y="161" width="96" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select A Stop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uub-Nc-dZl">
+                                <rect key="frame" x="252" y="161" width="105" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="96" id="Hpo-t8-Qb1"/>
                                     <constraint firstAttribute="height" constant="21" id="MlJ-fa-179"/>
