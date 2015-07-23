@@ -9,9 +9,11 @@
 import Foundation
 import MapKit
 import UIKit
-
+import CoreLocation
 
 extension ViewController: MKMapViewDelegate {
+    
+    
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         
         if annotation is MKUserLocation {
@@ -21,7 +23,6 @@ extension ViewController: MKMapViewDelegate {
             let identifier = "test"
             var view: MKAnnotationView
 
-                println("ijdijij")
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
       
@@ -43,9 +44,9 @@ extension ViewController: MKMapViewDelegate {
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
         
-            println("end")
             return view
     }
+    
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         initialLocation = locations[0] as! CLLocation
