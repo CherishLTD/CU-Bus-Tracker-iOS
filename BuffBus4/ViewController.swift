@@ -25,11 +25,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var routes = getRoutes()
     var testRoute : Route!
     var routeNumber = 0
+    var buses = getBuses()
     
     
     var initialLocation = CLLocation(latitude: 40.00373423, longitude: -105.2339187)
     var first = 0
     override func viewDidLoad() {
+
         mapView.delegate = self
         
         super.viewDidLoad()
@@ -82,7 +84,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.removeAnnotations( annotationsToRemove)
         var busses = getBuses()
         for bus in busses {
-            if bus.nextStopID > 0 && bus.routeID == testRoute {
+            if bus.nextStopID > 0 && bus.routeID == testRoute.id {
                 mapView.addAnnotation(bus)
             }
             

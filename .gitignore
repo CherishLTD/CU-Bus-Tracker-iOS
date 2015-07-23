@@ -16,5 +16,6 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+BuffBus4.xcodeproj/project.xcworkspace/xcuserdata/pawsh.xcuserdatad/UserInterfaceState.xcuserstate
 # Pods - for those of you who use CocoaPods
 Pods
