@@ -38,14 +38,14 @@ extension ViewController: MKMapViewDelegate {
         var isBus = false
         for bus in buses {
             if bus.title == annotation.title! {
-                view.image = UIImage(named: "bus.jpg")
+                view.image = UIImage(named: "busicon.png")
                 isBus = true
             }
         }
         
         
         if isBus == false {
-        view.image = UIImage(named: "nikcy.jpg")
+        view.image = UIImage(named: "stop2.png")
         }
 
                 view.calloutOffset = CGPoint(x: -5, y: 5)
