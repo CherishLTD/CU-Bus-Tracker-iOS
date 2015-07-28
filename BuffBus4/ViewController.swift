@@ -64,6 +64,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
+        
+        var coordinates1 = [CLLocationCoordinate2D]()
+        var cord1 = CLLocationCoordinate2D(latitude: 39.99660, longitude: -105.25064)
+        var cord2 = CLLocationCoordinate2D(latitude: 39.99351, longitude: -105.25077)
+        coordinates1.append(cord1)
+        coordinates1.append(cord2)
+        var line = MKPolyline(coordinates:&coordinates1, count: 2)
+        mapView.addOverlay(line)
+        
     }
 
     override func viewDidAppear(animated: Bool) {

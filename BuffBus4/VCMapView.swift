@@ -67,4 +67,25 @@ extension ViewController: MKMapViewDelegate {
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         println(error)
     }
+    
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay.isKindOfClass(MKPolyline) {
+            // draw the track
+            let polyLine = overlay
+            let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
+            polyLineRenderer.strokeColor = UIColor.blueColor()
+            polyLineRenderer.lineWidth = 5.0
+            
+            return polyLineRenderer
+        }
+        
+        return nil
+    }
+    
+    
+    
+    
+    
+    
 }
