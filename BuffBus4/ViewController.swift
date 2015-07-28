@@ -65,13 +65,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
         
-        var coordinates1 = [CLLocationCoordinate2D]()
-        var cord1 = CLLocationCoordinate2D(latitude: 39.99660, longitude: -105.25064)
-        var cord2 = CLLocationCoordinate2D(latitude: 39.99351, longitude: -105.25077)
-        coordinates1.append(cord1)
-        coordinates1.append(cord2)
-        var line = MKPolyline(coordinates:&coordinates1, count: 2)
-        mapView.addOverlay(line)
+        addRoute()
+       
         
     }
 
@@ -105,6 +100,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 mapView.addAnnotation(stop)
             }
         }
+    }
+  
+
+    
+    func addRoute() {
+        let thePath = NSBundle.mainBundle().pathForResource("Route1", ofType: "plist")
+        let pointsArray = NSArray(contentsOfFile: thePath!)
+        
+        let pointsCount = pointsArray!.count
+        
+        var pointsToUse: [CLLocationCoordinate2D] = []
+        
+        for i in 0...pointsCount-1 {
+            let p = CGPointFromString(pointsArray![i] as! String)
+            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
+        }
+        
+        let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
+        
+        mapView.addOverlay(myPolyline)
+        
+
     }
 }
 

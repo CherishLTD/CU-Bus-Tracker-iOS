@@ -22,6 +22,7 @@
 		2EF424151B59F1A600F65A2C /* RouteInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */; };
 		2EF424171B59F3E200F65A2C /* VCPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424161B59F3E200F65A2C /* VCPickerView.swift */; };
 		43135C791B5DFED100724395 /* nikcy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43135C781B5DFED100724395 /* nikcy.jpg */; };
+		43433A161B670D7E003A1461 /* Route1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43433A151B670D7E003A1461 /* Route1.plist */; };
 		43B21A371B5B45750059BFCC /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B21A361B5B45750059BFCC /* OptionsViewController.swift */; };
 		43C614311B609395009B5B44 /* bus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43C614301B609395009B5B44 /* bus.jpg */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteInfoGetter.swift; sourceTree = "<group>"; };
 		2EF424161B59F3E200F65A2C /* VCPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPickerView.swift; sourceTree = "<group>"; };
 		43135C781B5DFED100724395 /* nikcy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nikcy.jpg; sourceTree = "<group>"; };
+		43433A151B670D7E003A1461 /* Route1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Route1.plist; sourceTree = "<group>"; };
 		43B21A361B5B45750059BFCC /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		43C614301B609395009B5B44 /* bus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bus.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +125,7 @@
 		2E4709EF1B51AD6000E95354 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43433A151B670D7E003A1461 /* Route1.plist */,
 				2E4709F01B51AD6000E95354 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -226,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43433A161B670D7E003A1461 /* Route1.plist in Resources */,
 				43C614311B609395009B5B44 /* bus.jpg in Resources */,
 				2E4709F71B51AD6000E95354 /* Main.storyboard in Resources */,
 				2E4709FC1B51AD6000E95354 /* LaunchScreen.xib in Resources */,
