@@ -13,6 +13,7 @@ import Foundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    
     var locationManager: CLLocationManager!
     
     @IBOutlet weak var UIPicker: UIPickerView!
@@ -39,7 +40,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         for route in routes {
             if route.id == routeNumber {
                 testRoute = route
-                
             }
         }
         
@@ -105,16 +105,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     
     func addRoute() {
-        let thePath = NSBundle.mainBundle().pathForResource("Route1", ofType: "plist")
-        let pointsArray = NSArray(contentsOfFile: thePath!)
         
-        let pointsCount = pointsArray!.count
+        
+
+
+//        let thePath = NSBundle.mainBundle().pathForResource("Route1", ofType: "plist")
+        
+        let pointsCount = pointsArray.count
         
         var pointsToUse: [CLLocationCoordinate2D] = []
         
         for i in 0...pointsCount-1 {
-            let p = CGPointFromString(pointsArray![i] as! String)
-            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
+            
+            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(pointsArray[i][1]), CLLocationDegrees(pointsArray[i][0]))]
         }
         
         let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
