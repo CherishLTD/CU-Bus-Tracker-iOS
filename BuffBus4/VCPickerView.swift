@@ -33,7 +33,6 @@ extension ViewController {
         if stopDict[stops[row]]!.nextBusTimes[1] == 0 {
             timeLabel2.text = "Less than a minute"
         }else {
-            println("Im in 2")
             timeLabel2.text = String(stopDict[stops[row]]!.nextBusTimes[1]) + " Minutes"
         }
 
