@@ -23,12 +23,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var stopDict = [String: Stop]()
     var stops = [String]()
+    var stopinfo = getStops()
+    var closestStop: ( Name:String, Distance: Float)?
+    var pickerStartingLocation : Int!
+    
     var routes = getRoutes()
     var testRoute : Route!
     var routeNumber = 0
+    
     var buses = getBuses()
     
+    var initialLocation : CLLocation!
     var first = 0
+    
     override func viewDidLoad() {
 
         mapView.delegate = self
@@ -41,7 +48,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         
-        var stopinfo = getStops()
         
         for stop in stopinfo  {
             if contains(testRoute.stops,stop.id) {
@@ -62,16 +68,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
+        switch routeNumber {
+        case 1:
+            addRoute(BuffBus)
+        case 6:
+            addRoute(hopClockwise)
+        case 7:
+            addRoute(hopCounterClockwise)
+        case 3:
+            addRoute(latenightGold)
+        case 4:
+            addRoute(lateNightBlack)
+        case 5:
+            addRoute(latenightSilver)
+        case 8:
+            addRoute(basketballRoute)
+        case 2:
+            addRoute(footballRoute)
+        default:
+            println("error")
+        }
         
-        addRoute()
        
         
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        UIPicker.selectRow(5, inComponent: 0, animated: true)
+        println(closestStop)
+        println(pickerStartingLocation)
+        UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
     }
+    
     
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
@@ -102,20 +130,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
   
 
     
-    func addRoute() {
+    func addRoute(ptrToArray: [[Float]]) {
         
-        
-
 
 //        let thePath = NSBundle.mainBundle().pathForResource("Route1", ofType: "plist")
         
-        let pointsCount = pointsArray.count
+        let pointsCount = ptrToArray.count
         
         var pointsToUse: [CLLocationCoordinate2D] = []
         
         for i in 0...pointsCount-1 {
             
-            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(pointsArray[i][1]), CLLocationDegrees(pointsArray[i][0]))]
+            pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(ptrToArray[i][1]), CLLocationDegrees(ptrToArray[i][0]))]
         }
         
         let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)

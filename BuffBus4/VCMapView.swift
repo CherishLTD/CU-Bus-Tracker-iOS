@@ -57,7 +57,26 @@ extension ViewController: MKMapViewDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         initialLocation = locations[0] as! CLLocation
+        
         if first == 0 {
+            closestStop = ("",10000000.00)
+            var i = 0
+            for stop in stopinfo  {
+                if contains(testRoute.stops,stop.id) {
+                    
+                    var loc2 = CLLocation(latitude: stop.coordinate.latitude, longitude: stop.coordinate.longitude)
+                    
+                    let distance = initialLocation.distanceFromLocation(loc2)
+                    
+                    if closestStop?.Distance > Float(distance){
+                        pickerStartingLocation = i
+                        closestStop = (stop.title,Float(distance))
+                    }
+
+                    i = i + 1
+                    
+                }
+            }
             centerMapOnLocation(initialLocation)
             first = first+1
         }

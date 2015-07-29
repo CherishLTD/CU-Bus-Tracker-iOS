@@ -58,7 +58,7 @@ class OptionsViewController: UIViewController {
         case 3:
             routeNumber = 3
         default:
-            fatalError("The route numbers didn't match")
+            println("The route numbers didn't match")
         }
         performSegueWithIdentifier("mainSegue", sender: self)
 

@@ -103,8 +103,9 @@
 		2E4709EE1B51AD6000E95354 /* BuffBus4 */ = {
 			isa = PBXGroup;
 			children = (
-				2E4709F11B51AD6000E95354 /* AppDelegate.swift */,
 				2E4709F31B51AD6000E95354 /* ViewController.swift */,
+				43B21A361B5B45750059BFCC /* OptionsViewController.swift */,
+				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
 				2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */,
 				2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */,
 				2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */,
@@ -112,12 +113,11 @@
 				2EF4240E1B59DAF900F65A2C /* Route.swift */,
 				2E4DF10B1B6862FC005150E3 /* routeInfo.swift */,
 				2EBB7F4C1B54A9230066D730 /* Bus.swift */,
+				2E4709F11B51AD6000E95354 /* AppDelegate.swift */,
 				43135C781B5DFED100724395 /* nikcy.jpg */,
 				43C614301B609395009B5B44 /* bus.jpg */,
 				2EF424161B59F3E200F65A2C /* VCPickerView.swift */,
-				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
 				2E4709F51B51AD6000E95354 /* Main.storyboard */,
-				43B21A361B5B45750059BFCC /* OptionsViewController.swift */,
 				2E4709F81B51AD6000E95354 /* Images.xcassets */,
 				2E4709FA1B51AD6000E95354 /* LaunchScreen.xib */,
 				2E4709EF1B51AD6000E95354 /* Supporting Files */,
