@@ -13,6 +13,7 @@
 		2E4709F91B51AD6000E95354 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4709F81B51AD6000E95354 /* Images.xcassets */; };
 		2E4709FC1B51AD6000E95354 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E4709FA1B51AD6000E95354 /* LaunchScreen.xib */; };
 		2E470A081B51AD6000E95354 /* BuffBus4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E470A071B51AD6000E95354 /* BuffBus4Tests.swift */; };
+		2E4DF10C1B6862FC005150E3 /* routeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DF10B1B6862FC005150E3 /* routeInfo.swift */; };
 		2EBB7F4D1B54A9230066D730 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB7F4C1B54A9230066D730 /* Bus.swift */; };
 		2EBB7F4F1B54AACB0066D730 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */; };
 		2EBB7F511B54BC1D0066D730 /* BusInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */; };
@@ -48,6 +49,7 @@
 		2E470A011B51AD6000E95354 /* BuffBus4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuffBus4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E470A061B51AD6000E95354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E470A071B51AD6000E95354 /* BuffBus4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffBus4Tests.swift; sourceTree = "<group>"; };
+		2E4DF10B1B6862FC005150E3 /* routeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = routeInfo.swift; sourceTree = "<group>"; };
 		2EBB7F4C1B54A9230066D730 /* Bus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusInfoGetter.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */,
 				2EF424101B59DC7400F65A2C /* Stop.swift */,
 				2EF4240E1B59DAF900F65A2C /* Route.swift */,
+				2E4DF10B1B6862FC005150E3 /* routeInfo.swift */,
 				2EBB7F4C1B54A9230066D730 /* Bus.swift */,
 				43135C781B5DFED100724395 /* nikcy.jpg */,
 				43C614301B609395009B5B44 /* bus.jpg */,
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EF424151B59F1A600F65A2C /* RouteInfoGetter.swift in Sources */,
+				2E4DF10C1B6862FC005150E3 /* routeInfo.swift in Sources */,
 				43B21A371B5B45750059BFCC /* OptionsViewController.swift in Sources */,
 				2EF424111B59DC7400F65A2C /* Stop.swift in Sources */,
 				2EBB7F511B54BC1D0066D730 /* BusInfoGetter.swift in Sources */,
