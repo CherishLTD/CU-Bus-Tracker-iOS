@@ -28,8 +28,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var routeNumber = 0
     var buses = getBuses()
     
-    
-    var initialLocation = CLLocation(latitude: 40.00373423, longitude: -105.2339187)
     var first = 0
     override func viewDidLoad() {
 

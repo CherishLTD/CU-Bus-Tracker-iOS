@@ -238,7 +238,7 @@
                                     <segue destination="ZPf-rq-rQ5" kind="show" id="yrh-t6-LEn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1 Minute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncl-iv-u2X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Minute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncl-iv-u2X">
                                 <rect key="frame" x="249" y="198" width="99" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" id="43o-EY-1Te"/>
@@ -262,7 +262,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2 Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zL-aW-Elz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zL-aW-Elz">
                                 <rect key="frame" x="248" y="233" width="100" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="dcA-yP-qjW"/>
@@ -271,7 +271,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Next Times: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Geq-qa-eBv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Times: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Geq-qa-eBv">
                                 <rect key="frame" x="144" y="214" width="97" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="WQE-CG-Mmf"/>
@@ -285,11 +285,13 @@
                         <color key="backgroundColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="49N-Zc-lhm" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="1YG-vp-S8A"/>
+                            <constraint firstItem="ncl-iv-u2X" firstAttribute="leading" secondItem="Geq-qa-eBv" secondAttribute="leading" constant="105" id="5Xa-fF-E0O"/>
                             <constraint firstItem="49N-Zc-lhm" firstAttribute="top" secondItem="4zL-aW-Elz" secondAttribute="bottom" constant="31" id="B5Q-dC-5kO"/>
                             <constraint firstItem="4zL-aW-Elz" firstAttribute="centerX" secondItem="ncl-iv-u2X" secondAttribute="centerX" id="BZ5-Mg-8nh"/>
                             <constraint firstItem="Csf-Jg-IJ7" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="BtP-hg-Hqp"/>
                             <constraint firstItem="49N-Zc-lhm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="I6v-a2-uCZ"/>
                             <constraint firstItem="nsW-dT-2av" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="IhV-vH-BUU"/>
+                            <constraint firstAttribute="centerX" secondItem="ncl-iv-u2X" secondAttribute="centerX" constant="1.5" id="Jf1-R9-261"/>
                             <constraint firstItem="4zL-aW-Elz" firstAttribute="top" secondItem="ncl-iv-u2X" secondAttribute="bottom" constant="14" id="Kab-0g-NFb"/>
                             <constraint firstItem="ncl-iv-u2X" firstAttribute="leading" secondItem="Geq-qa-eBv" secondAttribute="trailing" constant="8" symbolic="YES" id="Kjf-dQ-xUd"/>
                             <constraint firstAttribute="trailing" secondItem="nsW-dT-2av" secondAttribute="trailing" id="Knw-Tq-fEG"/>
@@ -307,6 +309,7 @@
                             <mask key="constraints">
                                 <exclude reference="dhs-8N-yTy"/>
                                 <exclude reference="mEg-NW-vsr"/>
+                                <exclude reference="Kjf-dQ-xUd"/>
                                 <exclude reference="baQ-H5-E4A"/>
                             </mask>
                         </variation>
