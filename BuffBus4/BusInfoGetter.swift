@@ -30,7 +30,6 @@ func getBuses() -> [Bus] {
                             inService: true
                         )
                         buses.append(b)
-                        
                     }
                 }
         APIManager.sharedInstance.setBuses(buses)

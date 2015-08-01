@@ -30,6 +30,8 @@ func getRoutes() -> [Route] {
             }
         }
         APIManager.sharedInstance.setRoutes(routes)
+        
+      
     }
     task.resume()
     return routes

@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 
-func getStops() -> [Stop] {
+func getStops(view : OptionsViewController) -> [Stop] {
     
     let url = NSURL(string: "http://104.131.176.10:8080/stops")
     var stops = [Stop]()
@@ -43,6 +43,13 @@ func getStops() -> [Stop] {
             }
         }
         APIManager.sharedInstance.setStops(stops)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            view.showButtons()
+        }
+        
+        
+        
     }
     task.resume()
     return stops

@@ -19,16 +19,24 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var lnbButton: UIButton!
     @IBOutlet weak var lnsButton: UIButton!
     @IBOutlet weak var lngButton: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBAction func scanButton (sender: UIButton!) {
         performSegueWithIdentifier("ViewController", sender: self)
     }
     
     override func viewDidLoad() {
-        getRoutes()
-        getStops()
-        getBuses()
+        spinner.startAnimating()
+        hopCButton.hidden = true
+        hopCCButton.hidden = true
+        lnbButton.hidden = true
+        lnsButton.hidden = true
+        lngButton.hidden = true
+        buffButton.hidden = true
         super.viewDidLoad()
+        
+        
+        
         hopCButton.tag = 6
         hopCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         hopCCButton.tag = 7
@@ -41,6 +49,9 @@ class OptionsViewController: UIViewController {
         lnsButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         lngButton.tag = 3
         lngButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        getRoutes()
+        getStops(self)
+        getBuses()
     }
     
     func buttonClicked( sender: AnyObject?) {
@@ -62,6 +73,16 @@ class OptionsViewController: UIViewController {
         }
         performSegueWithIdentifier("mainSegue", sender: self)
 
+    }
+    
+    func showButtons() {
+        spinner.hidden = true
+        hopCButton.hidden = false
+        hopCCButton.hidden = false
+        lnbButton.hidden = false
+        lnsButton.hidden = false
+        lngButton.hidden = false
+        buffButton.hidden = false
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -145,6 +145,9 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ybx-9g-SLL">
+                                <rect key="frame" x="290" y="218" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -154,6 +157,7 @@
                             <constraint firstItem="mR0-n7-FFH" firstAttribute="top" secondItem="uub-Nc-dZl" secondAttribute="bottom" constant="14" id="AF5-xN-5BE"/>
                             <constraint firstItem="uub-Nc-dZl" firstAttribute="leading" secondItem="Ud4-aG-b3p" secondAttribute="leading" constant="226" id="Bh1-qv-edS"/>
                             <constraint firstItem="uub-Nc-dZl" firstAttribute="top" secondItem="neM-Ho-Tbk" secondAttribute="bottom" constant="8" symbolic="YES" id="BwI-2Q-s5O"/>
+                            <constraint firstItem="30A-cA-ATi" firstAttribute="top" secondItem="ybx-9g-SLL" secondAttribute="bottom" constant="35" id="DjU-2z-Kxa"/>
                             <constraint firstItem="ExE-Gg-Coh" firstAttribute="top" secondItem="30A-cA-ATi" secondAttribute="bottom" constant="8" symbolic="YES" id="EPi-at-BSU"/>
                             <constraint firstItem="yMX-aT-F5y" firstAttribute="top" secondItem="HS4-11-kr8" secondAttribute="bottom" constant="8" symbolic="YES" id="EoC-Jv-xHN"/>
                             <constraint firstItem="yMX-aT-F5y" firstAttribute="trailing" secondItem="HS4-11-kr8" secondAttribute="trailing" id="HmP-Ja-lrE"/>
@@ -173,6 +177,7 @@
                             <constraint firstItem="ExE-Gg-Coh" firstAttribute="leading" secondItem="HS4-11-kr8" secondAttribute="leading" id="lIE-BI-dxY"/>
                             <constraint firstItem="HS4-11-kr8" firstAttribute="trailing" secondItem="ExE-Gg-Coh" secondAttribute="trailing" id="n4X-Fz-fBU"/>
                             <constraint firstItem="mR0-n7-FFH" firstAttribute="trailing" secondItem="Awx-gS-4jW" secondAttribute="trailing" id="oW5-eo-Ng3"/>
+                            <constraint firstItem="ybx-9g-SLL" firstAttribute="centerX" secondItem="mR0-n7-FFH" secondAttribute="centerX" id="obv-hX-Q58"/>
                             <constraint firstItem="neM-Ho-Tbk" firstAttribute="leading" secondItem="Ud4-aG-b3p" secondAttribute="leading" constant="129" id="oxP-rL-ypM"/>
                             <constraint firstItem="ExE-Gg-Coh" firstAttribute="leading" secondItem="30A-cA-ATi" secondAttribute="leading" id="tmo-Z4-ujv"/>
                             <constraint firstItem="neM-Ho-Tbk" firstAttribute="top" secondItem="yXW-Lz-6kG" secondAttribute="bottom" constant="47" id="yJ7-L3-Zcv"/>
@@ -195,6 +200,7 @@
                         <outlet property="lnbButton" destination="ExE-Gg-Coh" id="XsH-J3-CDF"/>
                         <outlet property="lngButton" destination="yMX-aT-F5y" id="Qjd-ey-SLE"/>
                         <outlet property="lnsButton" destination="HS4-11-kr8" id="hIa-Hw-LlH"/>
+                        <outlet property="spinner" destination="ybx-9g-SLL" id="3uF-Pr-9Qu"/>
                         <segue destination="vXZ-lx-hvc" kind="show" identifier="mainSegue" id="NGg-0j-oHw"/>
                     </connections>
                 </viewController>
