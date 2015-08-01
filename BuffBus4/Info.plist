@@ -30,8 +30,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>want gps?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to tell you where the nearest stops are!</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

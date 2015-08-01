@@ -22,10 +22,8 @@
 		2EF424131B59DDD800F65A2C /* StopInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */; };
 		2EF424151B59F1A600F65A2C /* RouteInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */; };
 		2EF424171B59F3E200F65A2C /* VCPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424161B59F3E200F65A2C /* VCPickerView.swift */; };
-		43135C791B5DFED100724395 /* nikcy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43135C781B5DFED100724395 /* nikcy.jpg */; };
-		43433A161B670D7E003A1461 /* Route1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43433A151B670D7E003A1461 /* Route1.plist */; };
 		43B21A371B5B45750059BFCC /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B21A361B5B45750059BFCC /* OptionsViewController.swift */; };
-		43C614311B609395009B5B44 /* bus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43C614301B609395009B5B44 /* bus.jpg */; };
+		591290B31B6C857F00CD9F21 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591290B21B6C857F00CD9F21 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +56,8 @@
 		2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopInfoGetter.swift; sourceTree = "<group>"; };
 		2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteInfoGetter.swift; sourceTree = "<group>"; };
 		2EF424161B59F3E200F65A2C /* VCPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPickerView.swift; sourceTree = "<group>"; };
-		43135C781B5DFED100724395 /* nikcy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nikcy.jpg; sourceTree = "<group>"; };
-		43433A151B670D7E003A1461 /* Route1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Route1.plist; sourceTree = "<group>"; };
 		43B21A361B5B45750059BFCC /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		43C614301B609395009B5B44 /* bus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bus.jpg; sourceTree = "<group>"; };
+		591290B21B6C857F00CD9F21 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = ../APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,22 +99,10 @@
 		2E4709EE1B51AD6000E95354 /* BuffBus4 */ = {
 			isa = PBXGroup;
 			children = (
-				2E4709F31B51AD6000E95354 /* ViewController.swift */,
-				43B21A361B5B45750059BFCC /* OptionsViewController.swift */,
-				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
-				2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */,
-				2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */,
-				2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */,
-				2EF424101B59DC7400F65A2C /* Stop.swift */,
-				2EF4240E1B59DAF900F65A2C /* Route.swift */,
-				2E4DF10B1B6862FC005150E3 /* routeInfo.swift */,
-				2EBB7F4C1B54A9230066D730 /* Bus.swift */,
+				591290AC1B6C6D7300CD9F21 /* Model */,
 				2E4709F11B51AD6000E95354 /* AppDelegate.swift */,
-				43135C781B5DFED100724395 /* nikcy.jpg */,
-				43C614301B609395009B5B44 /* bus.jpg */,
-				2EF424161B59F3E200F65A2C /* VCPickerView.swift */,
-				2E4709F51B51AD6000E95354 /* Main.storyboard */,
-				2E4709F81B51AD6000E95354 /* Images.xcassets */,
+				591290AE1B6C6F2C00CD9F21 /* Controller */,
+				591290AD1B6C6F0500CD9F21 /* View */,
 				2E4709FA1B51AD6000E95354 /* LaunchScreen.xib */,
 				2E4709EF1B51AD6000E95354 /* Supporting Files */,
 			);
@@ -128,7 +112,6 @@
 		2E4709EF1B51AD6000E95354 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				43433A151B670D7E003A1461 /* Route1.plist */,
 				2E4709F01B51AD6000E95354 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -149,6 +132,41 @@
 				2E470A061B51AD6000E95354 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		591290AC1B6C6D7300CD9F21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				591290B21B6C857F00CD9F21 /* APIManager.swift */,
+				2EF424101B59DC7400F65A2C /* Stop.swift */,
+				2EBB7F4C1B54A9230066D730 /* Bus.swift */,
+				2EF4240E1B59DAF900F65A2C /* Route.swift */,
+				2E4DF10B1B6862FC005150E3 /* routeInfo.swift */,
+				2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */,
+				2EBB7F501B54BC1D0066D730 /* BusInfoGetter.swift */,
+				2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		591290AD1B6C6F0500CD9F21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E4709F51B51AD6000E95354 /* Main.storyboard */,
+				2E4709F81B51AD6000E95354 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		591290AE1B6C6F2C00CD9F21 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E4709F31B51AD6000E95354 /* ViewController.swift */,
+				43B21A361B5B45750059BFCC /* OptionsViewController.swift */,
+				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
+				2EF424161B59F3E200F65A2C /* VCPickerView.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,11 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43433A161B670D7E003A1461 /* Route1.plist in Resources */,
-				43C614311B609395009B5B44 /* bus.jpg in Resources */,
 				2E4709F71B51AD6000E95354 /* Main.storyboard in Resources */,
 				2E4709FC1B51AD6000E95354 /* LaunchScreen.xib in Resources */,
-				43135C791B5DFED100724395 /* nikcy.jpg in Resources */,
 				2E4709F91B51AD6000E95354 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +280,7 @@
 				2EBB7F4D1B54A9230066D730 /* Bus.swift in Sources */,
 				2EF424131B59DDD800F65A2C /* StopInfoGetter.swift in Sources */,
 				2EF4240F1B59DAF900F65A2C /* Route.swift in Sources */,
+				591290B31B6C857F00CD9F21 /* APIManager.swift in Sources */,
 				2E4709F41B51AD6000E95354 /* ViewController.swift in Sources */,
 				2E4709F21B51AD6000E95354 /* AppDelegate.swift in Sources */,
 			);
@@ -393,12 +409,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -406,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;

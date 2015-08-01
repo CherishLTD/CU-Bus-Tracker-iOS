@@ -12,36 +12,35 @@ import MapKit
 
 func getBuses() -> [Bus] {
     
-    var req = getJSON("http://104.131.176.10:8080/buses")
+    let url = NSURL(string: "http://104.131.176.10:8080/buses")
     var buses = [Bus]()
+    let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            var jsonError: NSError?
+            if let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? [[String: AnyObject]]
+                //        var BusInfo = json["BusInfo"] as? [String: AnyObject] {
+            {
+                let BusInfo = json
+                    for bus in BusInfo {
+                        var b = Bus(title: bus["equipmentID"] as! String,
+                            locationName:"Soon",
+                            coordinate: CLLocationCoordinate2D(latitude: bus["lat"] as! Double, longitude:bus["lng"] as! Double),
+                            routeID:bus["routeID"] as! Int,
+                            EquipmentID:bus["equipmentID"] as! String,
+                            nextStopID: bus["nextStopID"] as! Int,
+                            inService: true
+                        )
+                        buses.append(b)
+                        
+                    }
+                }
+        APIManager.sharedInstance.setBuses(buses)
+    }
     
-    var jsonError: NSError?
-    if let json = NSJSONSerialization.JSONObjectWithData(req, options: nil, error: &jsonError) as? [[String: AnyObject]]
-        //        var BusInfo = json["BusInfo"] as? [String: AnyObject] {
-    {
-        let BusInfo = json
-            for bus in BusInfo {
-                var b = Bus(title: bus["equipmentID"] as! String,
-                    locationName:"Soon",
-                    coordinate: CLLocationCoordinate2D(latitude: bus["lat"] as! Double, longitude:bus["lng"] as! Double),
-                    routeID:bus["routeID"] as! Int,
-                    EquipmentID:bus["equipmentID"] as! String,
-                    nextStopID: bus["nextStopID"] as! Int,
-                    inService: true
-                )
-                buses.append(b)
-                
-            }
-        }
-    
+    task.resume()
     return buses
 }
 
 
-
-func getJSON(urlToRequest: String) -> NSData{
-    return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
-}
 
 func parseJSON(inputData: NSData) -> NSDictionary{
     var error: NSError?

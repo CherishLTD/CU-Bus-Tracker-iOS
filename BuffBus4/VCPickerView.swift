@@ -27,12 +27,20 @@ extension ViewController {
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if stopDict[stops[row]]!.nextBusTimes[0] == 0 {
             timeLabel.text = "Less than a minute"
-        }else {
+        }
+        else if stopDict[stops[row]]!.nextBusTimes[0] < 0 {
+            timeLabel.text = "No Buses Currently Running"
+        }
+        else {
             timeLabel.text = String(stopDict[stops[row]]!.nextBusTimes[0]) + " Minutes"
         }
         if stopDict[stops[row]]!.nextBusTimes[1] == 0 {
             timeLabel2.text = "Less than a minute"
-        }else {
+        }
+        else if stopDict[stops[row]]!.nextBusTimes[1] < 0 {
+            timeLabel2.text = ""
+        }
+        else {
             timeLabel2.text = String(stopDict[stops[row]]!.nextBusTimes[1]) + " Minutes"
         }
 

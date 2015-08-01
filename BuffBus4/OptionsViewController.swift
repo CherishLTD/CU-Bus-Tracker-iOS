@@ -25,6 +25,9 @@ class OptionsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        getRoutes()
+        getStops()
+        getBuses()
         super.viewDidLoad()
         hopCButton.tag = 6
         hopCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
@@ -38,12 +41,9 @@ class OptionsViewController: UIViewController {
         lnsButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         lngButton.tag = 3
         lngButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
-        
     }
     
-    
     func buttonClicked( sender: AnyObject?) {
-
         switch sender!.tag {
         case 1:
             routeNumber = 1
@@ -64,10 +64,7 @@ class OptionsViewController: UIViewController {
 
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let identifier = segue.identifier as String!
-
         if segue.identifier == "mainSegue" {
             if let destination = segue.destinationViewController as? ViewController {
                 destination.routeNumber = routeNumber

@@ -13,7 +13,7 @@ import Foundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
-    
+
     var locationManager: CLLocationManager!
     
     @IBOutlet weak var UIPicker: UIPickerView!
@@ -23,21 +23,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var stopDict = [String: Stop]()
     var stops = [String]()
-    var stopinfo = getStops()
+    var stopinfo = APIManager.sharedInstance.getStops()
     var closestStop: ( Name:String, Distance: Float)?
     var pickerStartingLocation : Int!
     
-    var routes = getRoutes()
+    var routes = APIManager.sharedInstance.getRoutes()
     var testRoute : Route!
     var routeNumber = 0
     
-    var buses = getBuses()
+    var buses = APIManager.sharedInstance.getBuses()
     
     var initialLocation : CLLocation!
     var first = 0
     
     override func viewDidLoad() {
-
         mapView.delegate = self
         
         super.viewDidLoad()
@@ -47,7 +46,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 testRoute = route
             }
         }
-        
         
         for stop in stopinfo  {
             if contains(testRoute.stops,stop.id) {
@@ -59,11 +57,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
         
-        
+            
         plotNewBuses()
 
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
@@ -88,18 +86,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         default:
             println("error")
         }
-        
-       
-        
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println(closestStop)
-        println(pickerStartingLocation)
-        UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
     }
-    
     
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
@@ -109,46 +100,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func plotNewBuses()
-    {
+    func plotNewBuses() {
+        getBuses()
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)
-        var busses = getBuses()
+        var busses = APIManager.sharedInstance.getBuses()
         for bus in busses {
             if bus.nextStopID > 0 && bus.routeID == testRoute.id {
                 mapView.addAnnotation(bus)
             }
             
         }
-        var stops2 = getStops()
+        var stops2 = APIManager.sharedInstance.getStops()
         for stop in stops2 {
             if contains(testRoute.stops,stop.id) {
                 mapView.addAnnotation(stop)
             }
         }
     }
-  
-
     
     func addRoute(ptrToArray: [[Float]]) {
-        
-
-//        let thePath = NSBundle.mainBundle().pathForResource("Route1", ofType: "plist")
-        
         let pointsCount = ptrToArray.count
-        
         var pointsToUse: [CLLocationCoordinate2D] = []
         
         for i in 0...pointsCount-1 {
-            
             pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(ptrToArray[i][1]), CLLocationDegrees(ptrToArray[i][0]))]
         }
         
         let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
         
         mapView.addOverlay(myPolyline)
-        
-
     }
 }
 

@@ -31,7 +31,6 @@ class Bus: NSObject, MKAnnotation {
         self.inService = inService
         self.subtitle = locationName
         super.init()
-        
     }
     
 }
