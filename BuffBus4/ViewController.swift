@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var timeLabel2: UILabel!
+    @IBOutlet weak var next: UILabel!
     
     var stopDict = [String: Stop]()
     var stops = [String]()

@@ -89,6 +89,7 @@ extension ViewController: MKMapViewDelegate {
             }
             else if stopDict[stops[pickerStartingLocation]]!.nextBusTimes[0] < 0 {
                 timeLabel.text = "No Buses Currently Running"
+                next.hidden = true
             }
             else {
                 timeLabel.text = String(stopDict[stops[pickerStartingLocation]]!.nextBusTimes[0]) + " Minutes"
