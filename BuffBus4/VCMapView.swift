@@ -44,7 +44,7 @@ extension ViewController: MKMapViewDelegate {
             }
             if isBus == false {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
-                view!.image = UIImage(named: "stop2.png")
+                view!.image = UIImage(named: "yashsgoldCircle.png")
             }
             view!.canShowCallout = true
             view!.calloutOffset = CGPoint(x: -5, y: 5)
@@ -119,8 +119,8 @@ extension ViewController: MKMapViewDelegate {
             // draw the track
             let polyLine = overlay
             let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
-            polyLineRenderer.strokeColor = UIColor.blueColor()
-            polyLineRenderer.lineWidth = 5.0
+            polyLineRenderer.strokeColor = UIColor.blackColor()
+            polyLineRenderer.lineWidth = 3.0
             
             return polyLineRenderer
         }

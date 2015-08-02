@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F9C020CA-4CB1-46C3-91C3-C1F8E271D0AE</string>
 	<key>IDESourceControlProjectName</key>
-	<string>BuffBus4</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>48609D387949F1F5B301DA5091D8A2BA26F9E275</key>
 		<string>https://github.com/JoshFerge/BusApp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BuffBus4.xcodeproj</string>
+	<string>BuffBus4.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>48609D387949F1F5B301DA5091D8A2BA26F9E275</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>48609D387949F1F5B301DA5091D8A2BA26F9E275</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BuffBus4</string>
+			<string>BusApp</string>
 		</dict>
 	</array>
 </dict>

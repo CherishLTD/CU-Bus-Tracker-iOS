@@ -13,7 +13,7 @@ import Foundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
-
+    
     var locationManager: CLLocationManager!
     
     @IBOutlet weak var UIPicker: UIPickerView!
@@ -62,9 +62,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
         
-            
+        
         plotNewBuses()
-
+        
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
         switch routeNumber {
@@ -80,6 +80,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             addRoute(lateNightBlack)
         case 5:
             addRoute(latenightSilver)
+        case 9:
+            addRoute(athensRoute)
         case 8:
             addRoute(basketballRoute)
         case 2:
@@ -88,9 +90,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             println("error")
         }
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
     }
     
     let regionRadius: CLLocationDistance = 1000

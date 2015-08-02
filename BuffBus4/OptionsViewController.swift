@@ -19,6 +19,7 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var lnbButton: UIButton!
     @IBOutlet weak var lnsButton: UIButton!
     @IBOutlet weak var lngButton: UIButton!
+    @IBOutlet weak var athensButton: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBAction func scanButton (sender: UIButton!) {
@@ -49,6 +50,10 @@ class OptionsViewController: UIViewController {
         lnsButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         lngButton.tag = 3
         lngButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        athensButton.tag = 9
+        athensButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        
+        
         getRoutes()
         getStops(self)
         getBuses()
@@ -68,11 +73,13 @@ class OptionsViewController: UIViewController {
             routeNumber = 5
         case 3:
             routeNumber = 3
+        case 9:
+            routeNumber = 9
         default:
             println("The route numbers didn't match")
         }
         performSegueWithIdentifier("mainSegue", sender: self)
-
+        
     }
     
     func showButtons() {
