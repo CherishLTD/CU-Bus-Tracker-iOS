@@ -38,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         mapView.delegate = self
-        
+        mapView.showsPointsOfInterest = false
         super.viewDidLoad()
         
         for route in routes {
