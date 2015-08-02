@@ -93,7 +93,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
     }
     
     let regionRadius: CLLocationDistance = 1000

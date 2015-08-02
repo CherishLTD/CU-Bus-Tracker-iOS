@@ -27,15 +27,16 @@ extension ViewController: MKMapViewDelegate {
                 isBus = true
             }
         }
+        
         if isBus == false {
             view = mapView.dequeueReusableAnnotationViewWithIdentifier("stop")
         }
-        
         
         if view == nil {
             
             var isBus = false
             for bus in buses {
+                
                 if bus.title == annotation.title! {
                     view = MKAnnotationView(annotation: annotation, reuseIdentifier: "bus")
                     view!.image = UIImage(named: "busicon.png")
@@ -43,8 +44,9 @@ extension ViewController: MKMapViewDelegate {
                 }
             }
             if isBus == false {
+                println("Printing the stops")
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
-                view!.image = UIImage(named: "yashsgoldCircle.png")
+                view!.image = UIImage(named: "GoldCircle25.png")
             }
             view!.canShowCallout = true
             view!.calloutOffset = CGPoint(x: -5, y: 5)
@@ -61,8 +63,9 @@ extension ViewController: MKMapViewDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         initialLocation = locations[0] as! CLLocation
-        
+
         if first == 0 {
+            println("I am calculating closest now")
             closestStop = ("",10000000.00)
             var i = 0
             for stop in stopinfo  {
@@ -81,6 +84,7 @@ extension ViewController: MKMapViewDelegate {
                     
                 }
             }
+            
             centerMapOnLocation(initialLocation)
             UIPicker.selectRow(pickerStartingLocation!, inComponent: 0, animated: false)
             // should create helper function so dont have copy of this in 2 places

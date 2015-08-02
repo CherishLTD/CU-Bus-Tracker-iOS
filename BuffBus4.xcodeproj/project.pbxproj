@@ -22,6 +22,7 @@
 		2EF424131B59DDD800F65A2C /* StopInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */; };
 		2EF424151B59F1A600F65A2C /* RouteInfoGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */; };
 		2EF424171B59F3E200F65A2C /* VCPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF424161B59F3E200F65A2C /* VCPickerView.swift */; };
+		433812101B6E88AE007C2A00 /* GoldCircle25.png in Resources */ = {isa = PBXBuildFile; fileRef = 4338120F1B6E88AE007C2A00 /* GoldCircle25.png */; };
 		43B21A371B5B45750059BFCC /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B21A361B5B45750059BFCC /* OptionsViewController.swift */; };
 		591290B31B6C857F00CD9F21 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591290B21B6C857F00CD9F21 /* APIManager.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		2EF424121B59DDD800F65A2C /* StopInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopInfoGetter.swift; sourceTree = "<group>"; };
 		2EF424141B59F1A600F65A2C /* RouteInfoGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteInfoGetter.swift; sourceTree = "<group>"; };
 		2EF424161B59F3E200F65A2C /* VCPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCPickerView.swift; sourceTree = "<group>"; };
+		4338120F1B6E88AE007C2A00 /* GoldCircle25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GoldCircle25.png; path = ../../../GoldCircle25.png; sourceTree = "<group>"; };
 		43B21A361B5B45750059BFCC /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		591290B21B6C857F00CD9F21 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = ../APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 			children = (
 				2E4709F51B51AD6000E95354 /* Main.storyboard */,
 				2E4709F81B51AD6000E95354 /* Images.xcassets */,
+				4338120F1B6E88AE007C2A00 /* GoldCircle25.png */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -161,8 +164,8 @@
 		591290AE1B6C6F2C00CD9F21 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2E4709F31B51AD6000E95354 /* ViewController.swift */,
 				43B21A361B5B45750059BFCC /* OptionsViewController.swift */,
+				2E4709F31B51AD6000E95354 /* ViewController.swift */,
 				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
 				2EF424161B59F3E200F65A2C /* VCPickerView.swift */,
 			);
@@ -252,6 +255,7 @@
 			files = (
 				2E4709F71B51AD6000E95354 /* Main.storyboard in Resources */,
 				2E4709FC1B51AD6000E95354 /* LaunchScreen.xib in Resources */,
+				433812101B6E88AE007C2A00 /* GoldCircle25.png in Resources */,
 				2E4709F91B51AD6000E95354 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

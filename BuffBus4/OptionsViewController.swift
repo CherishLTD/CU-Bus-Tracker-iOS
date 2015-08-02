@@ -33,6 +33,7 @@ class OptionsViewController: UIViewController {
         lnbButton.hidden = true
         lnsButton.hidden = true
         lngButton.hidden = true
+        athensButton.hidden = true
         buffButton.hidden = true
         super.viewDidLoad()
         
@@ -60,24 +61,13 @@ class OptionsViewController: UIViewController {
     }
     
     func buttonClicked( sender: AnyObject?) {
-        switch sender!.tag {
-        case 1:
-            routeNumber = 1
-        case 6:
-            routeNumber = 6
-        case 7:
-            routeNumber = 7
-        case 4:
-            routeNumber = 4
-        case 5:
-            routeNumber = 5
-        case 3:
-            routeNumber = 3
-        case 9:
-            routeNumber = 9
-        default:
-            println("The route numbers didn't match")
+        
+        if sender!.tag != nil {
+        routeNumber = sender!.tag
+        }else {
+        println("The sender tag was nil")
         }
+        
         performSegueWithIdentifier("mainSegue", sender: self)
         
     }
@@ -90,6 +80,7 @@ class OptionsViewController: UIViewController {
         lnsButton.hidden = false
         lngButton.hidden = false
         buffButton.hidden = false
+        athensButton.hidden = false
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
