@@ -33,13 +33,9 @@ class OptionsViewController: UIViewController {
         buttons = [buffButton,hopCButton,hopCCButton,lnbButton,lnsButton,lngButton,athensButton]
         
         spinner.startAnimating()
-        hopCButton.hidden = true
-        hopCCButton.hidden = true
-        lnbButton.hidden = true
-        lnsButton.hidden = true
-        lngButton.hidden = true
-        athensButton.hidden = true
-        buffButton.hidden = true
+        for button in buttons {
+            button.hidden = true
+        }
         super.viewDidLoad()
         
         
@@ -78,13 +74,14 @@ class OptionsViewController: UIViewController {
     
     func showButtons() {
         spinner.hidden = true
-        hopCButton.hidden = false
-        hopCCButton.hidden = false
-        lnbButton.hidden = false
-        lnsButton.hidden = false
-        lngButton.hidden = false
-        buffButton.hidden = false
-        athensButton.hidden = false
+        for button in buttons {
+            button.hidden = false
+        }
+    }
+    func infoClicked(sender: AnyObject?) {
+        var viewToPresent = RoutePopUpViewController()
+        self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        self.presentViewController(viewToPresent, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -38,9 +38,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var first = 0
     
     override func viewDidLoad() {
+        
+        
         mapView.delegate = self
         mapView.showsPointsOfInterest = false
+        
         super.viewDidLoad()
+
         
         for route in routes {
             if route.id == routeNumber {
@@ -62,11 +66,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
         
-        
+
         plotNewBuses()
         
+
         var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
-        
+
         switch routeNumber {
         case 1:
             addRoute(BuffBus)
@@ -104,6 +109,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func plotNewBuses() {
+        
         getBuses()
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)

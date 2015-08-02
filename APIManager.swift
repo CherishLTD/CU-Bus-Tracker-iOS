@@ -35,7 +35,7 @@ class APIManager : NSObject {
     func setBuses(newBuses: [Bus]) {
         self.buses = newBuses
     }
-    
+    // Every once in a while it crashes here unwrapping a nil value
     func getRoutes() -> [Route] {
         return self.routes!
     }

@@ -16,6 +16,7 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         var view : MKAnnotationView?
+
         if annotation is MKUserLocation {
             return nil;
         }
@@ -44,12 +45,11 @@ extension ViewController: MKMapViewDelegate {
                 }
             }
             if isBus == false {
-                println("Printing the stops")
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
-                view!.image = UIImage(named: "GoldCircle25.png")
+                view!.image = UIImage(named: "gold_BlackBorder.png")
             }
             view!.canShowCallout = true
-            view!.calloutOffset = CGPoint(x: -5, y: 5)
+            view!.centerOffset = CGPointMake(5, -5);
             view!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
         }
         
@@ -63,9 +63,8 @@ extension ViewController: MKMapViewDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         initialLocation = locations[0] as! CLLocation
-
+        
         if first == 0 {
-            println("I am calculating closest now")
             closestStop = ("",10000000.00)
             var i = 0
             for stop in stopinfo  {
