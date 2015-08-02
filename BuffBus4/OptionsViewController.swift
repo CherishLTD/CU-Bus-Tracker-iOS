@@ -20,6 +20,9 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var lnsButton: UIButton!
     @IBOutlet weak var lngButton: UIButton!
     @IBOutlet weak var athensButton: UIButton!
+    var buttons = [UIButton]()
+    
+    @IBOutlet weak var buffBusInfo: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBAction func scanButton (sender: UIButton!) {
@@ -27,6 +30,8 @@ class OptionsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        buttons = [buffButton,hopCButton,hopCCButton,lnbButton,lnsButton,lngButton,athensButton]
+        
         spinner.startAnimating()
         hopCButton.hidden = true
         hopCCButton.hidden = true
@@ -40,19 +45,18 @@ class OptionsViewController: UIViewController {
         
         
         hopCButton.tag = 6
-        hopCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         hopCCButton.tag = 7
-        hopCCButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         buffButton.tag = 1
-        buffButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         lnbButton.tag = 4
-        lnbButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         lnsButton.tag = 5
-        lnsButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         lngButton.tag = 3
-        lngButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         athensButton.tag = 9
-        athensButton.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        
+        for button in buttons {
+            button.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+        }
+        
+        buffBusInfo.addTarget(self, action: "infoClicked:", forControlEvents: .TouchUpInside)
         
         
         getRoutes()

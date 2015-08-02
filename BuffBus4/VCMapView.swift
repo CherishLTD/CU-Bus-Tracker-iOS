@@ -107,7 +107,7 @@ extension ViewController: MKMapViewDelegate {
             else {
                 timeLabel2.text = String(stopDict[stops[pickerStartingLocation]]!.nextBusTimes[1]) + " Minutes"
             }
-//            UIPicker.pickerView(pickerView: UIPicker, didSelectRow: pickerStartingLocation , inComponent: 0)
+            UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
             first = first+1
         }
         

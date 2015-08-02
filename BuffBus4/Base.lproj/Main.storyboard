@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -162,9 +162,27 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7R-zm-9wb">
+                                <rect key="frame" x="404" y="200" width="22" height="22"/>
+                                <color key="tintColor" red="0.9818942790568892" green="1" blue="0.94452113134117088" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGw-ke-esG">
+                                <rect key="frame" x="16" y="550" width="121" height="30"/>
+                                <state key="normal" title="Report a Problem">
+                                    <color key="titleColor" red="1" green="0.060231345866727404" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PtE-py-bly" kind="show" id="inh-fw-Cx2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="J7R-zm-9wb" firstAttribute="centerY" secondItem="mR0-n7-FFH" secondAttribute="centerY" id="0EV-G4-IOo"/>
                             <constraint firstItem="HS4-11-kr8" firstAttribute="leading" secondItem="yMX-aT-F5y" secondAttribute="leading" id="3nz-EK-bxi"/>
                             <constraint firstItem="uub-Nc-dZl" firstAttribute="centerX" secondItem="neM-Ho-Tbk" secondAttribute="centerX" id="43r-vK-tDR"/>
                             <constraint firstItem="HS4-11-kr8" firstAttribute="trailing" secondItem="ExE-Gg-Coh" secondAttribute="trailing" id="4y7-fM-fgt"/>
@@ -190,7 +208,10 @@
                             <constraint firstAttribute="centerX" secondItem="neM-Ho-Tbk" secondAttribute="centerX" constant="23.5" id="ZIV-dj-P8I"/>
                             <constraint firstItem="HS4-11-kr8" firstAttribute="top" secondItem="ExE-Gg-Coh" secondAttribute="bottom" constant="8" symbolic="YES" id="ab0-zl-Q1d"/>
                             <constraint firstItem="yMX-aT-F5y" firstAttribute="trailing" secondItem="HS4-11-kr8" secondAttribute="trailing" id="b4f-wM-99a"/>
+                            <constraint firstAttribute="bottom" secondItem="iGw-ke-esG" secondAttribute="bottom" constant="20" symbolic="YES" id="bf0-rd-WFD"/>
+                            <constraint firstItem="J7R-zm-9wb" firstAttribute="leading" secondItem="ybx-9g-SLL" secondAttribute="trailing" constant="94" id="cOL-ZD-hod"/>
                             <constraint firstItem="30A-cA-ATi" firstAttribute="top" secondItem="Awx-gS-4jW" secondAttribute="bottom" constant="8" symbolic="YES" id="cPp-7a-LDb"/>
+                            <constraint firstItem="iGw-ke-esG" firstAttribute="leading" secondItem="Ud4-aG-b3p" secondAttribute="leadingMargin" id="deJ-f9-3ky"/>
                             <constraint firstItem="neM-Ho-Tbk" firstAttribute="top" secondItem="yXW-Lz-6kG" secondAttribute="bottom" constant="47" id="eMj-6Q-lAP"/>
                             <constraint firstItem="KdP-kw-7nj" firstAttribute="top" secondItem="yMX-aT-F5y" secondAttribute="bottom" constant="145" id="iDl-u8-6af"/>
                             <constraint firstItem="ExE-Gg-Coh" firstAttribute="top" secondItem="dKu-e3-o4i" secondAttribute="bottom" constant="8" symbolic="YES" id="kh7-UG-jQ6"/>
@@ -215,6 +236,7 @@
                     </view>
                     <connections>
                         <outlet property="athensButton" destination="dKu-e3-o4i" id="hVx-D0-BdR"/>
+                        <outlet property="buffBusInfo" destination="J7R-zm-9wb" id="fGN-g0-7NG"/>
                         <outlet property="buffButton" destination="mR0-n7-FFH" id="5Ca-fU-4eh"/>
                         <outlet property="hopCButton" destination="Awx-gS-4jW" id="3dy-pA-yLx"/>
                         <outlet property="hopCCButton" destination="30A-cA-ATi" id="GTl-Vd-R5q"/>
@@ -228,6 +250,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7m-Ul-kXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-514" y="267"/>
+        </scene>
+        <!--Route Pop Up View Controller-->
+        <scene sceneID="adS-wU-REJ">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="Dw2-Nm-Dy5" customClass="RoutePopUpViewController" customModule="BuffBus4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L3x-u0-08J"/>
+                        <viewControllerLayoutGuide type="bottom" id="sjM-Ov-cKN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bQq-1F-Q2K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tu6-vB-HdQ">
+                                <rect key="frame" x="274" y="71" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tu6-vB-HdQ" firstAttribute="top" secondItem="L3x-u0-08J" secondAttribute="bottom" constant="51" id="YfS-pg-SG2"/>
+                            <constraint firstAttribute="centerX" secondItem="Tu6-vB-HdQ" secondAttribute="centerX" constant="5" id="fN9-eY-tpx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFS-Hs-qEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1131" y="978"/>
+        </scene>
+        <!--Report Problem View Controller-->
+        <scene sceneID="S2X-kf-Jwd">
+            <objects>
+                <viewController id="PtE-py-bly" customClass="ReportProblemViewController" customModule="BuffBus4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sd6-mb-4Lu"/>
+                        <viewControllerLayoutGuide type="bottom" id="0gt-dQ-hWR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XSM-Ng-LuR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJU-rl-gsc">
+                                <rect key="frame" x="198" y="135" width="205" height="365"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="LJ2-Ne-Q82"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8R-NT-6BJ">
+                                <rect key="frame" x="-11" y="20" width="90" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="cp0-0Q-aUs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ZPf-rq-rQ5" kind="show" id="v1y-vr-MdA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please report any problems or feedback to us!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS2-hb-sUt">
+                                <rect key="frame" x="123" y="90" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlu-JN-3ek">
+                                <rect key="frame" x="277" y="508" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.95294117647058818" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fJU-rl-gsc" firstAttribute="top" secondItem="RS2-hb-sUt" secondAttribute="bottom" constant="24" id="7Fk-4g-0Jj"/>
+                            <constraint firstItem="fJU-rl-gsc" firstAttribute="top" secondItem="sd6-mb-4Lu" secondAttribute="bottom" constant="115" id="87W-e8-c92"/>
+                            <constraint firstItem="m8R-NT-6BJ" firstAttribute="leading" secondItem="XSM-Ng-LuR" secondAttribute="leadingMargin" constant="-27" id="Iwz-Vj-gW7"/>
+                            <constraint firstAttribute="centerX" secondItem="RS2-hb-sUt" secondAttribute="centerX" id="Tif-Su-6be"/>
+                            <constraint firstItem="0gt-dQ-hWR" firstAttribute="top" secondItem="m8R-NT-6BJ" secondAttribute="bottom" constant="509" id="Vgf-pm-cRj"/>
+                            <constraint firstAttribute="centerX" secondItem="qlu-JN-3ek" secondAttribute="centerX" constant="5" id="Z9J-Ca-Uyz"/>
+                            <constraint firstItem="qlu-JN-3ek" firstAttribute="top" secondItem="fJU-rl-gsc" secondAttribute="bottom" constant="8" id="cLo-mm-tOI"/>
+                            <constraint firstItem="fJU-rl-gsc" firstAttribute="centerX" secondItem="XSM-Ng-LuR" secondAttribute="centerX" id="ldg-WY-JWA"/>
+                            <constraint firstItem="0gt-dQ-hWR" firstAttribute="top" secondItem="fJU-rl-gsc" secondAttribute="bottom" constant="100" id="rzF-ct-NUU"/>
+                            <constraint firstItem="m8R-NT-6BJ" firstAttribute="top" secondItem="XSM-Ng-LuR" secondAttribute="top" constant="20" id="zQP-uU-LZ8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="654-XB-y9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-495" y="1039"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -353,4 +471,7 @@
             </objects>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="v1y-vr-MdA"/>
+    </inferredMetricsTieBreakers>
 </document>
