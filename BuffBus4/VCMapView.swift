@@ -44,7 +44,7 @@ extension ViewController: MKMapViewDelegate {
             }
             if isBus == false {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
-                view!.image = UIImage(named: "yashsgoldCircle.png")
+                view!.image = UIImage(named: "yashsGoldCircle.png")
             }
             view!.canShowCallout = true
             view!.calloutOffset = CGPoint(x: -5, y: 5)
@@ -103,7 +103,7 @@ extension ViewController: MKMapViewDelegate {
             else {
                 timeLabel2.text = String(stopDict[stops[pickerStartingLocation]]!.nextBusTimes[1]) + " Minutes"
             }
-//            UIPicker.pickerView(pickerView: UIPicker, didSelectRow: pickerStartingLocation , inComponent: 0)
+            UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
             first = first+1
         }
         

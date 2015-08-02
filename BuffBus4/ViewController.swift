@@ -93,7 +93,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
+//        UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
     }
     
     let regionRadius: CLLocationDistance = 1000
@@ -108,8 +108,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         getBuses()
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)
-        var busses = APIManager.sharedInstance.getBuses()
-        for bus in busses {
+        var buses = APIManager.sharedInstance.getBuses()
+        for bus in buses {
             if bus.nextStopID > 0 && bus.routeID == testRoute.id {
                 mapView.addAnnotation(bus)
             }
