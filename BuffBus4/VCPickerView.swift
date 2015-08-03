@@ -33,6 +33,9 @@ extension ViewController {
         else {
             timeLabel.text = String(stopDict[stops[row]]!.nextBusTimes[0]) + " Minutes"
         }
+        // If only one bus is running/ there is only one next time in the array 
+        // It will break from the index being out of range
+        
         if stopDict[stops[row]]!.nextBusTimes[1] == 0 {
             timeLabel2.text = "Less than a minute"
         }

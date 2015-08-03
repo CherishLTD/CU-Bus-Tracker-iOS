@@ -47,10 +47,11 @@ extension ViewController: MKMapViewDelegate {
             if isBus == false {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
                 view!.image = UIImage(named: "gold_BlackBorder.png")
+                view!.centerOffset = CGPointMake(5, -5);
+                view!.calloutOffset = CGPoint(x: -5, y: 20)
             }
             view!.canShowCallout = true
-            view!.centerOffset = CGPointMake(5, -5);
-            view!.calloutOffset = CGPoint(x: -5, y: 20)
+          
             view!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
         }
         
