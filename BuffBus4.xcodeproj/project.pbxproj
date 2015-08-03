@@ -157,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				2E4709F51B51AD6000E95354 /* Main.storyboard */,
-				596F5A421B6DF62100182946 /* RoutePopUpViewController.swift */,
 				2E4709F81B51AD6000E95354 /* Images.xcassets */,
 			);
 			name = View;
@@ -170,6 +169,7 @@
 				2E4709F31B51AD6000E95354 /* ViewController.swift */,
 				2EBB7F4E1B54AACB0066D730 /* VCMapView.swift */,
 				2EF424161B59F3E200F65A2C /* VCPickerView.swift */,
+				596F5A421B6DF62100182946 /* RoutePopUpViewController.swift */,
 				596F5A401B6DE61500182946 /* ReportProblemViewController.swift */,
 			);
 			name = Controller;

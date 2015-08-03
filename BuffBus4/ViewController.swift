@@ -111,6 +111,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func plotNewBuses() {
         
         getBuses()
+        getStops(self)
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)
         var buses = APIManager.sharedInstance.getBuses()
@@ -126,6 +127,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 mapView.addAnnotation(stop)
             }
         }
+//        stopinfo = APIManager.sharedInstance.getStops()
     }
     
     func addRoute(ptrToArray: [[Float]]) {

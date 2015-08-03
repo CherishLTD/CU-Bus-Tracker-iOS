@@ -9,9 +9,21 @@
 import UIKit
 
 class RoutePopUpViewController: UIViewController {
+    var routeNumber : Int!
+    
+    @IBOutlet weak var infoText: UITextView!
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-
+        println(routeNumber)
+        switch routeNumber {
+        case 1:
+            infoText.text = "TEST"
+        case 5:
+            infoText.text = "TEST"
+        default:
+            println("NOPE")
+        }
     }
+    
+    
    
 }
