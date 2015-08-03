@@ -50,6 +50,7 @@ extension ViewController: MKMapViewDelegate {
             }
             view!.canShowCallout = true
             view!.centerOffset = CGPointMake(5, -5);
+            view!.calloutOffset = CGPoint(x: -5, y: 20)
             view!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
         }
         
