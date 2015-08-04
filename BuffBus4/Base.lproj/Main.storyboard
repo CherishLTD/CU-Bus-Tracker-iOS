@@ -33,7 +33,6 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a3-sA-C9D">
                                 <rect key="frame" x="172" y="99" width="240" height="230"/>
-                                <string key="text">The Buff Bus (Brown Line) runs from Williams Village and Bear Creek to campus and has multiple stops around campus. The Buff Bus is free to ride and does not require a bus pass. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

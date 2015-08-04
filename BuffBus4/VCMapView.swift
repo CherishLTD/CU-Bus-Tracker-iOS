@@ -27,10 +27,19 @@ extension ViewController: MKMapViewDelegate {
                 view = mapView.dequeueReusableAnnotationViewWithIdentifier("bus")
                 isBus = true
             }
+        
         }
         
         if isBus == false {
-            view = mapView.dequeueReusableAnnotationViewWithIdentifier("stop")
+            if annotation.title != closestStopTitle {
+                view = mapView.dequeueReusableAnnotationViewWithIdentifier("stop")
+            }
+            else {
+                if annotation.subtitle != "" {
+                    println("HI")
+                view = mapView.dequeueReusableAnnotationViewWithIdentifier("closestStop")
+                }
+            }
         }
         
         if view == nil {
@@ -38,17 +47,30 @@ extension ViewController: MKMapViewDelegate {
             var isBus = false
             for bus in buses {
                 
-                if bus.title == annotation.title! {
+                if bus.title == annotation.title! && bus.title != closestStopTitle {
                     view = MKAnnotationView(annotation: annotation, reuseIdentifier: "bus")
                     view!.image = UIImage(named: "busicon.png")
                     isBus = true
+
                 }
             }
             if isBus == false {
+                if annotation.title != closestStopTitle {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
                 view!.image = UIImage(named: "gold_BlackBorder.png")
                 view!.centerOffset = CGPointMake(5, -5);
                 view!.calloutOffset = CGPoint(x: -5, y: 20)
+                }
+                else {
+                    if annotation.title == closestStopTitle {
+                        println(annotation.subtitle)
+                    
+                        view = MKAnnotationView(annotation: annotation, reuseIdentifier: "closestStop")
+                        view!.image = UIImage(named: "red+gold.png")
+                        view!.centerOffset = CGPointMake(5, -5);
+                        view!.calloutOffset = CGPoint(x: -5, y: 20)
+                    }
+                }
             }
             view!.canShowCallout = true
           
@@ -77,6 +99,7 @@ extension ViewController: MKMapViewDelegate {
                     let distance = initialLocation.distanceFromLocation(loc2)
                     
                     if closestStop?.Distance > Float(distance){
+                        closestStopTitle = stop.title
                         pickerStartingLocation = i
                         closestStop = (stop.title,Float(distance))
                     }
@@ -84,11 +107,28 @@ extension ViewController: MKMapViewDelegate {
                     i = i + 1
                     
                 }
+                
+            }
+            
+            for stop in stopinfo {
+                if stop.title == closestStopTitle! {
+                    stop.setNewSubtitle("Nearest Stop")
+                }
             }
             
             centerMapOnLocation(initialLocation)
+            
+            var annotationsRemove = mapView.annotations.filter { $0.title == self.closestStopTitle  }
+            mapView.removeAnnotations( annotationsRemove)
+            plotNewBuses()
+            
+            
             UIPicker.selectRow(pickerStartingLocation!, inComponent: 0, animated: false)
             // should create helper function so dont have copy of this in 2 places
+            
+            currentPickerLocation = pickerStartingLocation!
+            
+            
             if stopDict[stops[pickerStartingLocation]]!.nextBusTimes[0] == 0 {
                 timeLabel.text = "Less than a minute"
             }

@@ -28,6 +28,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var closestStop: ( Name:String, Distance: Float)?
     var pickerStartingLocation : Int!
     
+    var closestStopTitle : String?
+    
+    
+    var currentPickerLocation : Int?
+    var getInfoTimer : NSTimer!
     var routes = APIManager.sharedInstance.getRoutes()
     var testRoute : Route!
     var routeNumber = 0
@@ -70,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         plotNewBuses()
         
 
-        var getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
+        getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
 
         switch routeNumber {
         case 1:
@@ -107,11 +112,50 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(coordinateRegion, animated: false)
     }
     
+    func updateStops() {
+        var stopinfo = APIManager.sharedInstance.getStops()
+        for stop in stopinfo  {
+            if contains(testRoute.stops,stop.id) {
+                stopDict[stop.title] = stop
+                stops.append(stop.title)
+            }
+            if stop == closestStopTitle {
+                stop.setNewSubtitle("Nearest Stop")
+            }
+        }
+        if currentPickerLocation != nil  {
+            if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[0] == 0 {
+                timeLabel.text = "Less than a minute"
+            }
+            else if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[0] < 0 {
+                timeLabel.text = "No Buses Currently Running"
+            }
+            else {
+                timeLabel.text = String(stopDict[stops[currentPickerLocation!]]!.nextBusTimes[0]) + " Minutes"
+            }
+            // If only one bus is running/ there is only one next time in the array
+            // It will break from the index being out of range
+            
+            if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[1] == 0 {
+                timeLabel2.text = "Less than a minute"
+            }
+            else if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[1] < 0 {
+                timeLabel2.text = ""
+            }
+            else {
+                timeLabel2.text = String(stopDict[stops[currentPickerLocation!]]!.nextBusTimes[1]) + " Minutes"
+            }
+
+        }
+        else {
+            println(":(")
+        }
+    }
+    
     
     func plotNewBuses() {
-        
+        getStops(self,updateStops)
         getBuses()
-        getStops(self)
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
         mapView.removeAnnotations( annotationsToRemove)
         var buses = APIManager.sharedInstance.getBuses()
@@ -141,6 +185,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
         
         mapView.addOverlay(myPolyline)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        closestStopTitle = nil
+        getInfoTimer.invalidate()
+        
     }
 }
 

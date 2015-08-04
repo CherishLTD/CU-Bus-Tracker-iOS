@@ -14,7 +14,7 @@ class Stop: NSObject, MKAnnotation {
     let title : String
     let coordinate : CLLocationCoordinate2D
     let nextBusTimes : [Int]
-    let subtitle : String
+    var subtitle : String
 
     init (title: String, id: Int, coordinate: CLLocationCoordinate2D, nextBusTimes: [Int]) {
         self.id = id
@@ -27,6 +27,8 @@ class Stop: NSObject, MKAnnotation {
         
     }
     
-   
+    func setNewSubtitle(newSubTitle: String) {
+        self.subtitle = newSubTitle
+    }
     
 }

@@ -81,7 +81,7 @@ class OptionsViewController: UIViewController {
         }
 
         getRoutes()
-        getStops(self)
+        getStops(self,nil)
         getBuses()
     }
     

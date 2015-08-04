@@ -24,6 +24,7 @@ extension ViewController {
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currentPickerLocation = row
         if stopDict[stops[row]]!.nextBusTimes[0] == 0 {
             timeLabel.text = "Less than a minute"
         }
