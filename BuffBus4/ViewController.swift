@@ -113,14 +113,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateStops() {
+        println("Test")
         var stopinfo = APIManager.sharedInstance.getStops()
         for stop in stopinfo  {
             if contains(testRoute.stops,stop.id) {
                 stopDict[stop.title] = stop
                 stops.append(stop.title)
             }
-            if stop == closestStopTitle {
+            if let closestStopTitle = closestStopTitle as String! {
+                
+            if stop.title == closestStopTitle {
+                println("ITS THERE")
                 stop.setNewSubtitle("Nearest Stop")
+            }
             }
         }
         if currentPickerLocation != nil  {
@@ -134,10 +139,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func plotNewBuses() {
+        
         getStops(self,updateStops)
         getBuses()
         let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
-        mapView.removeAnnotations( annotationsToRemove)
+        mapView.removeAnnotations(annotationsToRemove)
         var buses = APIManager.sharedInstance.getBuses()
         for bus in buses {
             if bus.nextStopID > 0 && bus.routeID == testRoute.id {
@@ -177,11 +183,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         currentPickerLocation = row
         if stopDict[stops[row]]!.nextBusTimes[0] == 0 {
             timeLabel.text = "Less than a minute"
+            next.hidden = false
         }
         else if stopDict[stops[row]]!.nextBusTimes[0] < 0 {
             timeLabel.text = "No Buses Currently Running"
+            next.hidden = true
         }
         else {
+            next.hidden = false
             timeLabel.text = String(stopDict[stops[row]]!.nextBusTimes[0]) + " Minutes"
         }
         // If only one bus is running/ there is only one next time in the array
