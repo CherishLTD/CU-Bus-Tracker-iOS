@@ -68,7 +68,7 @@ extension ViewController: MKMapViewDelegate {
                         view = MKAnnotationView(annotation: annotation, reuseIdentifier: "closestStop")
                         view!.image = UIImage(named: "red+gold.png")
                         view!.centerOffset = CGPointMake(5, -5);
-                        view!.calloutOffset = CGPoint(x: -5, y: 20)
+                        view!.calloutOffset = CGPoint(x: 0, y: 15)
                     }
                 }
             }
@@ -124,31 +124,9 @@ extension ViewController: MKMapViewDelegate {
             
             
             UIPicker.selectRow(pickerStartingLocation!, inComponent: 0, animated: false)
-            // should create helper function so dont have copy of this in 2 places
             
             currentPickerLocation = pickerStartingLocation!
-            
-            
-            if stopDict[stops[pickerStartingLocation]]!.nextBusTimes[0] == 0 {
-                timeLabel.text = "Less than a minute"
-            }
-            else if stopDict[stops[pickerStartingLocation]]!.nextBusTimes[0] < 0 {
-                timeLabel.text = "No Buses Currently Running"
-                next.hidden = true
-            }
-            else {
-                timeLabel.text = String(stopDict[stops[pickerStartingLocation]]!.nextBusTimes[0]) + " Minutes"
-            }
-            if stopDict[stops[pickerStartingLocation]]!.nextBusTimes[1] == 0 {
-                timeLabel2.text = "Less than a minute"
-            }
-            else if stopDict[stops[pickerStartingLocation]]!.nextBusTimes[1] < 0 {
-                timeLabel2.text = ""
-            }
-            else {
-                timeLabel2.text = String(stopDict[stops[pickerStartingLocation]]!.nextBusTimes[1]) + " Minutes"
-            }
-            UIPicker.selectRow(pickerStartingLocation, inComponent: 0, animated: true)
+            updateTimes(currentPickerLocation!)
             first = first+1
         }
         

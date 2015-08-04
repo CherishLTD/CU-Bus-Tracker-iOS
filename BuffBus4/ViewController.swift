@@ -124,27 +124,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         if currentPickerLocation != nil  {
-            if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[0] == 0 {
-                timeLabel.text = "Less than a minute"
-            }
-            else if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[0] < 0 {
-                timeLabel.text = "No Buses Currently Running"
-            }
-            else {
-                timeLabel.text = String(stopDict[stops[currentPickerLocation!]]!.nextBusTimes[0]) + " Minutes"
-            }
-            // If only one bus is running/ there is only one next time in the array
-            // It will break from the index being out of range
-            
-            if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[1] == 0 {
-                timeLabel2.text = "Less than a minute"
-            }
-            else if stopDict[stops[currentPickerLocation!]]!.nextBusTimes[1] < 0 {
-                timeLabel2.text = ""
-            }
-            else {
-                timeLabel2.text = String(stopDict[stops[currentPickerLocation!]]!.nextBusTimes[1]) + " Minutes"
-            }
+            updateTimes(currentPickerLocation!)
 
         }
         else {
@@ -190,6 +170,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidDisappear(animated: Bool) {
         closestStopTitle = nil
         getInfoTimer.invalidate()
+        
+    }
+    
+    func updateTimes(row: Int) {
+        currentPickerLocation = row
+        if stopDict[stops[row]]!.nextBusTimes[0] == 0 {
+            timeLabel.text = "Less than a minute"
+        }
+        else if stopDict[stops[row]]!.nextBusTimes[0] < 0 {
+            timeLabel.text = "No Buses Currently Running"
+        }
+        else {
+            timeLabel.text = String(stopDict[stops[row]]!.nextBusTimes[0]) + " Minutes"
+        }
+        // If only one bus is running/ there is only one next time in the array
+        // It will break from the index being out of range
+        
+        if stopDict[stops[row]]!.nextBusTimes[1] == 0 {
+            timeLabel2.text = "Less than a minute"
+        }
+        else if stopDict[stops[row]]!.nextBusTimes[1] < 0 {
+            timeLabel2.text = ""
+        }
+        else {
+            timeLabel2.text = String(stopDict[stops[row]]!.nextBusTimes[1]) + " Minutes"
+        }
         
     }
 }
