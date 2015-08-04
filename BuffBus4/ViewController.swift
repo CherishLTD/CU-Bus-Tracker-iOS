@@ -113,7 +113,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateStops() {
-        println("Test")
         var stopinfo = APIManager.sharedInstance.getStops()
         for stop in stopinfo  {
             if contains(testRoute.stops,stop.id) {
@@ -123,7 +122,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             if let closestStopTitle = closestStopTitle as String! {
                 
             if stop.title == closestStopTitle {
-                println("ITS THERE")
                 stop.setNewSubtitle("Nearest Stop")
             }
             }
@@ -132,9 +130,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             updateTimes(currentPickerLocation!)
 
         }
-        else {
-            println(":(")
-        }
+      
     }
     
     

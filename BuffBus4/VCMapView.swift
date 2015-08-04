@@ -36,7 +36,6 @@ extension ViewController: MKMapViewDelegate {
             }
             else {
                 if annotation.subtitle != "" {
-                    println("HI")
                 view = mapView.dequeueReusableAnnotationViewWithIdentifier("closestStop")
                 }
             }
@@ -63,7 +62,6 @@ extension ViewController: MKMapViewDelegate {
                 }
                 else {
                     if annotation.title == closestStopTitle {
-                        println(annotation.subtitle)
                     
                         view = MKAnnotationView(annotation: annotation, reuseIdentifier: "closestStop")
                         view!.image = UIImage(named: "red+gold.png")
