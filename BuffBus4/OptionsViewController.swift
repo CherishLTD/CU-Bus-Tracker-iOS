@@ -98,7 +98,6 @@ class OptionsViewController: UIViewController {
     }
     
     func infoButtonClicked( sender: AnyObject?) {
-        println("g")
         if sender!.tag != nil {
             routeNumber = sender!.tag
         }else {

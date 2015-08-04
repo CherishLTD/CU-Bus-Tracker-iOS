@@ -110,15 +110,18 @@ extension ViewController: MKMapViewDelegate {
             
             for stop in stopinfo {
                 if stop.title == closestStopTitle! {
+                    println(stop.title)
                     stop.setNewSubtitle("Nearest Stop")
+                    var annotationsRemove = mapView.annotations.filter { $0.title == self.closestStopTitle  }
+                    mapView.removeAnnotations( annotationsRemove)
+                    mapView.addAnnotation(stop)
                 }
             }
             
             centerMapOnLocation(initialLocation)
             
-            var annotationsRemove = mapView.annotations.filter { $0.title == self.closestStopTitle  }
-            mapView.removeAnnotations( annotationsRemove)
-            plotNewBuses()
+         
+//            plotNewBuses()
             
             
             UIPicker.selectRow(pickerStartingLocation!, inComponent: 0, animated: false)
