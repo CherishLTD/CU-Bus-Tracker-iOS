@@ -11,7 +11,6 @@ import MapKit
 
 
 func getStops(view : UIViewController, callback: (() -> Void)?) -> [Stop] {
-    
     let url = NSURL(string: "http://104.131.176.10:8080/stops")
     var stops = [Stop]()
     
@@ -43,10 +42,13 @@ func getStops(view : UIViewController, callback: (() -> Void)?) -> [Stop] {
             }
         }
         APIManager.sharedInstance.setStops(stops)
-        callback?()
+        
         dispatch_async(dispatch_get_main_queue()) {
             if let view = view as? OptionsViewController {
             view.showButtons()
+            }
+            if let view = view as? ViewController {
+                callback?()
             }
         }
         

@@ -74,6 +74,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
 
         plotNewBuses()
+        plotStops()
         
 
         getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
@@ -123,17 +124,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateStops() {
+        
         var stopinfo = APIManager.sharedInstance.getStops()
         for stop in stopinfo  {
             if contains(testRoute.stops,stop.id) {
                 stopDict[stop.title] = stop
-                stops.append(stop.title)
             }
             if let closestStopTitle = closestStopTitle as String! {
-                
-            if stop.title == closestStopTitle {
-                stop.setNewSubtitle("Nearest Stop")
-            }
+                if stop.title == closestStopTitle {
+                    stop.setNewSubtitle("Nearest Stop")
+                }
             }
         }
         if currentPickerLocation != nil  {
@@ -145,10 +145,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func plotNewBuses() {
-        
         getStops(self,updateStops)
+        
         getBuses()
-        let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation }
+        
+        let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation && !contains(self.stops,$0.title) }
         mapView.removeAnnotations(annotationsToRemove)
         var buses = APIManager.sharedInstance.getBuses()
         for bus in buses {
@@ -157,13 +158,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
             
         }
-        var stops2 = APIManager.sharedInstance.getStops()
-        for stop in stops2 {
+    }
+    
+    func plotStops() {
+        
+        for stop in APIManager.sharedInstance.getStops() {
             if contains(testRoute.stops,stop.id) {
                 mapView.addAnnotation(stop)
             }
         }
-//        stopinfo = APIManager.sharedInstance.getStops()
     }
     
     func addRoute(ptrToArray: [[Float]]) {
@@ -191,7 +194,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             timeLabel.text = "Less than a minute"
             next.hidden = false
         }
-        else if stopDict[stops[row]]!.nextBusTimes[0] < 0 {
+        if stopDict[stops[row]]!.nextBusTimes[0] < 0 {
             timeLabel.text = "No Buses Currently Running"
             next.hidden = true
         }
@@ -205,7 +208,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if stopDict[stops[row]]!.nextBusTimes[1] == 0 {
             timeLabel2.text = "Less than a minute"
         }
-        else if stopDict[stops[row]]!.nextBusTimes[1] < 0 {
+        if stopDict[stops[row]]!.nextBusTimes[1] < 0 {
             timeLabel2.text = ""
         }
         else {

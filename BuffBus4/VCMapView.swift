@@ -87,7 +87,6 @@ extension ViewController: MKMapViewDelegate {
         initialLocation = locations[0] as! CLLocation
         
         if first == 0 {
-            getStops(self,updateStops)
             closestStop = ("",10000000.00)
             var i = 0
             for stop in stopinfo  {
