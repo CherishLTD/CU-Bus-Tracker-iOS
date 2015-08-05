@@ -119,10 +119,7 @@ extension ViewController: MKMapViewDelegate {
             }
             
             centerMapOnLocation(initialLocation)
-            
-         
-            
-            
+
             
             UIPicker.selectRow(pickerStartingLocation!, inComponent: 0, animated: false)
             

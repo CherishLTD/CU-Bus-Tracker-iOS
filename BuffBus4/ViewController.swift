@@ -16,6 +16,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     
+    @IBOutlet weak var routeLabel: UILabel!
     @IBOutlet weak var UIPicker: UIPickerView!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -79,22 +80,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         switch routeNumber {
         case 1:
+            routeLabel.text = "Buff Bus"
             addRoute(BuffBus)
         case 6:
+            routeLabel.text = "HOP Clockwise"
             addRoute(hopClockwise)
         case 7:
+            routeLabel.text = "HOP Counterclockwise"
             addRoute(hopCounterClockwise)
         case 3:
+            routeLabel.text = "Late Night Gold"
             addRoute(latenightGold)
         case 4:
+            routeLabel.text = "Late Night Black"
             addRoute(lateNightBlack)
         case 5:
+            routeLabel.text = "Late Night Silver"
             addRoute(latenightSilver)
         case 9:
+            routeLabel.text = "Athens Route"
             addRoute(athensRoute)
         case 8:
+            routeLabel.text = "Buff Bus Basketball"
             addRoute(basketballRoute)
         case 2:
+            routeLabel.text = "Buff Bus Football"
             addRoute(footballRoute)
         default:
             println("error")

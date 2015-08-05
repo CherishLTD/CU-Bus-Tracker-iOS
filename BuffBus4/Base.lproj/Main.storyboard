@@ -440,8 +440,8 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="49N-Zc-lhm">
                                 <rect key="frame" x="0.0" y="285" width="605" height="315"/>
                             </mapView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsW-dT-2av">
-                                <rect key="frame" x="0.0" y="40" width="600" height="100"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nsW-dT-2av">
+                                <rect key="frame" x="0.0" y="79" width="600" height="80"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="dBC-Ej-RXg"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="U92-7h-9c0"/>
@@ -504,6 +504,12 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EF-Ms-W3P">
+                                <rect key="frame" x="279" y="28" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95734643779999995" blue="0.6791917153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -527,6 +533,8 @@
                             <constraint firstItem="49N-Zc-lhm" firstAttribute="leading" secondItem="nsW-dT-2av" secondAttribute="leading" id="d7F-Xp-1ki"/>
                             <constraint firstItem="nsW-dT-2av" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="41" id="dhs-8N-yTy"/>
                             <constraint firstItem="49N-Zc-lhm" firstAttribute="top" secondItem="nsW-dT-2av" secondAttribute="bottom" constant="76" id="mEg-NW-vsr"/>
+                            <constraint firstAttribute="centerX" secondItem="6EF-Ms-W3P" secondAttribute="centerX" id="teD-D3-7EE"/>
+                            <constraint firstItem="6EF-Ms-W3P" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="wLV-Z8-Qp7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -541,6 +549,7 @@
                         <outlet property="UIPicker" destination="nsW-dT-2av" id="ibG-NE-evi"/>
                         <outlet property="mapView" destination="49N-Zc-lhm" id="bBe-ZX-bne"/>
                         <outlet property="next" destination="Geq-qa-eBv" id="Lyl-6y-Ir1"/>
+                        <outlet property="routeLabel" destination="6EF-Ms-W3P" id="XPl-3d-TIx"/>
                         <outlet property="timeLabel" destination="ncl-iv-u2X" id="PbI-Ze-r6x"/>
                         <outlet property="timeLabel2" destination="4zL-aW-Elz" id="adG-W9-shj"/>
                     </connections>
@@ -550,6 +559,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="k39-Sh-3bp"/>
+        <segue reference="yrh-t6-LEn"/>
     </inferredMetricsTieBreakers>
 </document>
