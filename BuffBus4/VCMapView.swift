@@ -110,8 +110,11 @@ extension ViewController: MKMapViewDelegate {
             }
             
             for stop in stopinfo {
+                
                 if stop.title == closestStopTitle! {
                     stop.setNewSubtitle("Nearest Stop")
+                    stop.setNewSubtitle("Subtitle2")
+                    stop.setNewSubtitle("Subtitle3")
                     var annotationsRemove = mapView.annotations.filter { $0.title == self.closestStopTitle  }
                     mapView.removeAnnotations( annotationsRemove)
                     mapView.addAnnotation(stop)
