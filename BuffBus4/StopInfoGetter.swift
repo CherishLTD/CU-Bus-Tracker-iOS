@@ -40,17 +40,18 @@ func getStops(view : UIViewController, callback: (() -> Void)?) -> [Stop] {
                 }
                 
             }
+            APIManager.sharedInstance.setStops(stops)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let view = view as? OptionsViewController {
+                    view.showButtons()
+                }
+                if let view = view as? ViewController {
+                    callback?()
+                }
+            }
         }
-        APIManager.sharedInstance.setStops(stops)
         
-        dispatch_async(dispatch_get_main_queue()) {
-            if let view = view as? OptionsViewController {
-            view.showButtons()
-            }
-            if let view = view as? ViewController {
-                callback?()
-            }
-        }
         
         
         

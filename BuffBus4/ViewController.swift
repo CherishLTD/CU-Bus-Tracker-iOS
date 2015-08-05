@@ -29,6 +29,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var closestStop: ( Name:String, Distance: Float)?
     var pickerStartingLocation : Int!
     
+    var TitleToIndex = [String: Int]()
+    
     var closestStopTitle : String?
     
     
@@ -43,6 +45,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var initialLocation : CLLocation!
     var first = 0
     
+
+    
     override func viewDidLoad() {
         
         
@@ -50,6 +54,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.showsPointsOfInterest = false
         
         super.viewDidLoad()
+        
+ 
 
         
         for route in routes {
@@ -57,11 +63,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 testRoute = route
             }
         }
-        
+        var i = 0
         for stop in stopinfo  {
             if contains(testRoute.stops,stop.id) {
                 stopDict[stop.title] = stop
                 stops.append(stop.title)
+                TitleToIndex[stop.title] = i
+                i+=1
             }
         }
         
@@ -216,5 +224,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+    
+
 }
 

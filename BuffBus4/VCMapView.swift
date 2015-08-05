@@ -13,6 +13,15 @@ import CoreLocation
 
 extension ViewController: MKMapViewDelegate {
     
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if contains(stops,view.annotation.title!) {
+        currentPickerLocation = TitleToIndex[view.annotation.title!]
+        UIPicker.selectRow(currentPickerLocation!, inComponent: 0, animated: true)
+        updateTimes(currentPickerLocation!)
+            
+        }
+        
+    }
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         var view : MKAnnotationView?
@@ -71,7 +80,6 @@ extension ViewController: MKMapViewDelegate {
                 }
             }
             view!.canShowCallout = true
-          
             view!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
         }
         
@@ -112,8 +120,6 @@ extension ViewController: MKMapViewDelegate {
                 
                 if stop.title == closestStopTitle! {
                     stop.setNewSubtitle("Nearest Stop")
-                    stop.setNewSubtitle("Subtitle2")
-                    stop.setNewSubtitle("Subtitle3")
                     var annotationsRemove = mapView.annotations.filter { $0.title == self.closestStopTitle  }
                     mapView.removeAnnotations( annotationsRemove)
                     mapView.addAnnotation(stop)
@@ -150,4 +156,7 @@ extension ViewController: MKMapViewDelegate {
         
         return nil
     }
+    
+    
+    
 }
