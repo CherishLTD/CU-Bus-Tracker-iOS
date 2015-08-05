@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZPf-rq-rQ5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-Ps-d2O">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-Ps-d2O">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="hkG-yC-quk"/>
+                                    <constraint firstAttribute="width" constant="90" id="RvH-cZ-fRf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
                                 <state key="normal" title="&lt;">
@@ -31,17 +31,40 @@
                                     <segue destination="ZPf-rq-rQ5" kind="show" identifier="" id="k39-Sh-3bp"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a3-sA-C9D">
-                                <rect key="frame" x="172" y="99" width="240" height="230"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6a3-sA-C9D">
+                                <rect key="frame" x="198" y="103" width="205" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="317" id="97e-4e-l6w"/>
+                                    <constraint firstAttribute="width" secondItem="6a3-sA-C9D" secondAttribute="height" multiplier="205:394" id="O5V-PW-ew0"/>
+                                    <constraint firstAttribute="width" secondItem="6a3-sA-C9D" secondAttribute="height" multiplier="317:394" id="Ueb-eY-ppc"/>
+                                    <constraint firstAttribute="width" secondItem="6a3-sA-C9D" secondAttribute="height" multiplier="205:394" id="sON-bW-jxm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="97e-4e-l6w"/>
+                                        <exclude reference="Ueb-eY-ppc"/>
+                                        <exclude reference="sON-bW-jxm"/>
+                                    </mask>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95294117647058818" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="6a3-sA-C9D" secondAttribute="centerX" constant="8" id="gW7-cL-gwX"/>
-                            <constraint firstItem="6a3-sA-C9D" firstAttribute="top" secondItem="Xjf-dO-H4g" secondAttribute="bottom" constant="79" id="qce-aV-1so"/>
+                            <constraint firstItem="6a3-sA-C9D" firstAttribute="top" secondItem="Xjf-dO-H4g" secondAttribute="bottom" constant="83" id="7hF-JP-3sx"/>
+                            <constraint firstItem="EiL-aS-xnj" firstAttribute="top" secondItem="9Ks-Ps-d2O" secondAttribute="bottom" constant="529" id="BVA-62-Qf8"/>
+                            <constraint firstItem="6a3-sA-C9D" firstAttribute="top" secondItem="Xjf-dO-H4g" secondAttribute="bottom" constant="83" id="JAP-GF-cT8"/>
+                            <constraint firstItem="9Ks-Ps-d2O" firstAttribute="top" secondItem="GMk-AH-PXC" secondAttribute="top" id="X2a-Lg-fXh"/>
+                            <constraint firstItem="9Ks-Ps-d2O" firstAttribute="leading" secondItem="GMk-AH-PXC" secondAttribute="leading" id="kK8-1y-dWz"/>
+                            <constraint firstItem="6a3-sA-C9D" firstAttribute="centerY" secondItem="GMk-AH-PXC" secondAttribute="centerY" id="mMf-ud-1Ma"/>
+                            <constraint firstItem="6a3-sA-C9D" firstAttribute="centerX" secondItem="GMk-AH-PXC" secondAttribute="centerX" id="wyg-Py-41y"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JAP-GF-cT8"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="infoText" destination="6a3-sA-C9D" id="7IY-SO-NU9"/>
@@ -396,7 +419,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please report any problems or feedback to us!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RS2-hb-sUt">
                                 <rect key="frame" x="123" y="90" width="354" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlu-JN-3ek">
@@ -507,7 +530,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EF-Ms-W3P">
                                 <rect key="frame" x="279" y="28" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -559,6 +582,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yrh-t6-LEn"/>
+        <segue reference="k39-Sh-3bp"/>
     </inferredMetricsTieBreakers>
 </document>
