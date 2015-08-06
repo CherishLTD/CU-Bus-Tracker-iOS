@@ -224,7 +224,5 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    
-
 }
 
