@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 
 extension ViewController {    
@@ -25,18 +26,14 @@ extension ViewController {
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateTimes(row)
-//        for annotation in mapView.annotations {
-//           
-//            if annotation.title == stops[row] {
-//            mapView.selectAnnotation(annotation: annotation, animated: false)
-//            }
-//        }
         
+        for annotation1 in mapView.annotations {
+            if annotation1.title == stops[row] {
+                let annotation1 = annotation1 as? MKAnnotation
+                mapView.selectAnnotation(annotation1, animated:true)
+            }
         
-            
-            
-
+        }
     }
     
-
 }
