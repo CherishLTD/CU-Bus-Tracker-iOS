@@ -25,6 +25,17 @@ extension ViewController {
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateTimes(row)
+//        for annotation in mapView.annotations {
+//           
+//            if annotation.title == stops[row] {
+//            mapView.selectAnnotation(annotation: annotation, animated: false)
+//            }
+//        }
+        
+        
+            
+            
+
     }
     
 

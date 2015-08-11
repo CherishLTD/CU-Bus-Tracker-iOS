@@ -21,19 +21,34 @@ func getStops(view : UIViewController, callback: (() -> Void)?) -> [Stop] {
             let StopInfo = json
             for stop in StopInfo {
                 
-                if let nextBusTimes = stop["nextBusTimes"] as?  [Int] {
+                if let nextBusTimes = stop["nextBusTimes"] as?  [String: [Int]]  {
+                    
+                    if nextBusTimes.count > 0 {
                     var b = Stop(title: stop["name"] as! String,
                         id:stop["id"] as! Int,
                         coordinate: CLLocationCoordinate2D(latitude: stop["lat"] as! Double, longitude:stop["lng"] as! Double),
                         nextBusTimes: nextBusTimes
                     )
+                    
                     stops.append(b)
+                    }
+                    else {
+                        var b = Stop(title: stop["name"] as! String,
+                            id:stop["id"] as! Int,
+                            coordinate: CLLocationCoordinate2D(latitude: stop["lat"] as! Double, longitude:stop["lng"] as! Double),
+                            nextBusTimes: ["1":[-1,-2],"2":[-1,-2],"3":[-1,-2],"4":[-1,-2],"5":[-1,-2],"6":[-1,-2],"7":[-1,-2],"8":[-1,-2],"9":[-1,-2]]
+                        )
+                        stops.append(b)
+                        
+                    }
                 }
+                
                 else {
+                   
                     var b = Stop(title: stop["name"] as! String,
                         id:stop["id"] as! Int,
                         coordinate: CLLocationCoordinate2D(latitude: stop["lat"] as! Double, longitude:stop["lng"] as! Double),
-                        nextBusTimes: [-1, -2]
+                        nextBusTimes: ["1":[-1,-2],"2":[-1,-2],"3":[-1,-2],"4":[-1,-2],"5":[-1,-2],"6":[-1,-2],"7":[-1,-2],"8":[-1,-2],"9":[-1,-2]]
                     )
                     stops.append(b)
                     

@@ -79,8 +79,9 @@ extension ViewController: MKMapViewDelegate {
                     }
                 }
             }
+            
             view!.canShowCallout = true
-            view!.rightCalloutAccessoryView = UIButton.buttonWithType(.DetailDisclosure) as! UIView
+            
         }
         
         else {

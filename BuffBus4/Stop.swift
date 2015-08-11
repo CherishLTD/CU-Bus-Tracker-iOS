@@ -13,10 +13,10 @@ class Stop: NSObject, MKAnnotation {
     let id : Int
     let title : String
     let coordinate : CLLocationCoordinate2D
-    let nextBusTimes : [Int]
+    let nextBusTimes : [String: [Int]]
     var subtitle : String
 
-    init (title: String, id: Int, coordinate: CLLocationCoordinate2D, nextBusTimes: [Int]) {
+    init (title: String, id: Int, coordinate: CLLocationCoordinate2D, nextBusTimes: [String: [Int]]) {
         self.id = id
         self.title = title
         self.coordinate = coordinate

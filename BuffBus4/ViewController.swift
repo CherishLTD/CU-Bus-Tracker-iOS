@@ -198,32 +198,51 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateTimes(row: Int) {
         currentPickerLocation = row
-        if stopDict[stops[row]]!.nextBusTimes[0] == 0 {
+        if let times = stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)] {
+        
+        if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] == 0 {
+            timeLabel.text = "No Buses Currently Running"
+            next.hidden = true
+        }
+        
+        if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] == 0 {
             timeLabel.text = "Less than a minute"
             next.hidden = false
         }
-        if stopDict[stops[row]]!.nextBusTimes[0] < 0 {
+        if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] < 0 {
             timeLabel.text = "No Buses Currently Running"
             next.hidden = true
         }
         else {
             next.hidden = false
-            timeLabel.text = String(stopDict[stops[row]]!.nextBusTimes[0]) + " Minutes"
+            var test = stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0]
+            timeLabel.text = String(test) + " Minutes"
         }
         // If only one bus is running/ there is only one next time in the array
         // It will break from the index being out of range
-        if stopDict[stops[row]]!.nextBusTimes.count > 1 {
-            if stopDict[stops[row]]!.nextBusTimes[1] == 0 {
+        if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]!.count > 1 {
+            if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] == 0 {
                 timeLabel2.text = "Less than a minute"
+                
             }
-            if stopDict[stops[row]]!.nextBusTimes[1] < 0 {
+            if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] < 0 {
                 timeLabel2.text = ""
+               
+                
             }
             else {
-                timeLabel2.text = String(stopDict[stops[row]]!.nextBusTimes[1]) + " Minutes"
+                var test = stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1]
+                timeLabel2.text = String(test) + " Minutes"
+               
             }
         } else {
             timeLabel2.text = ""
+        }
+        }
+        else {
+            timeLabel.text = "No Buses Currently Running"
+            timeLabel2.text = ""
+            next.hidden = true
         }
         
     }
