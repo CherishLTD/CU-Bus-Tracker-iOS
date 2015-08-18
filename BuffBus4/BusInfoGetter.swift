@@ -21,12 +21,10 @@ func getBuses() -> [Bus] {
             {
                 let BusInfo = json
                     for bus in BusInfo {
-                        var b = Bus(title: bus["equipmentID"] as! String,
-                            locationName:"Soon",
+                        var b = Bus(title: "bus",
+                            locationName:"",
                             coordinate: CLLocationCoordinate2D(latitude: bus["lat"] as! Double, longitude:bus["lng"] as! Double),
                             routeID:bus["routeID"] as! Int,
-                            EquipmentID:bus["equipmentID"] as! String,
-                            nextStopID: bus["nextStopID"] as! Int,
                             inService: true
                         )
                         buses.append(b)

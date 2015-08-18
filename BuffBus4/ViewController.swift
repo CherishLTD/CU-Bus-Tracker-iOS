@@ -161,7 +161,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.removeAnnotations(annotationsToRemove)
         var buses = APIManager.sharedInstance.getBuses()
         for bus in buses {
-            if bus.nextStopID > 0 && bus.routeID == testRoute.id {
+            if bus.routeID == testRoute.id {
                 mapView.addAnnotation(bus)
             }
             

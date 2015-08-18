@@ -68,6 +68,7 @@ extension ViewController: MKMapViewDelegate {
                 view!.image = UIImage(named: "gold_BlackBorder.png")
                 view!.centerOffset = CGPointMake(5, -5);
                 view!.calloutOffset = CGPoint(x: -5, y: 20)
+                view!.canShowCallout = true
                 }
                 else {
                     if annotation.title == closestStopTitle {
@@ -76,11 +77,12 @@ extension ViewController: MKMapViewDelegate {
                         view!.image = UIImage(named: "red+gold.png")
                         view!.centerOffset = CGPointMake(5, -5);
                         view!.calloutOffset = CGPoint(x: 0, y: 15)
+                        view!.canShowCallout = true
                     }
                 }
             }
             
-            view!.canShowCallout = true
+            
             
         }
         
@@ -127,6 +129,16 @@ extension ViewController: MKMapViewDelegate {
                 }
             }
             
+            for annotation1 in mapView.annotations {
+                if annotation1.title == closestStopTitle {
+                    let annotation1 = annotation1 as? MKAnnotation
+                    mapView.selectAnnotation(annotation1, animated:true)
+                }
+                
+            }
+            
+            
+            
             centerMapOnLocation(initialLocation)
 
             
@@ -147,7 +159,6 @@ extension ViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay.isKindOfClass(MKPolyline) {
             // draw the track
-            println(routeNumber)
             let polyLine = overlay
             let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
             // polyLineRenderer.strokeColor = UIColor.yellowColor()
@@ -174,7 +185,6 @@ extension ViewController: MKMapViewDelegate {
                 polyLineRenderer.strokeColor = UIColor.yellowColor()
             }
             
-            polyLineRenderer.strokeColor = UIColor.blackColor()
             polyLineRenderer.lineWidth = 3.0
             
             return polyLineRenderer
