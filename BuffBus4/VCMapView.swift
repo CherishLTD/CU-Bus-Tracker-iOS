@@ -67,8 +67,9 @@ extension ViewController: MKMapViewDelegate {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
                 view!.image = UIImage(named: "gold_BlackBorder.png")
                 view!.centerOffset = CGPointMake(5, -5);
-                view!.calloutOffset = CGPoint(x: -5, y: 20)
+                view!.calloutOffset = CGPoint(x: -1, y: 0)
                 view!.canShowCallout = true
+                view!.alpha = 0.75
                 }
                 else {
                     if annotation.title == closestStopTitle {
@@ -76,8 +77,9 @@ extension ViewController: MKMapViewDelegate {
                         view = MKAnnotationView(annotation: annotation, reuseIdentifier: "closestStop")
                         view!.image = UIImage(named: "red+gold.png")
                         view!.centerOffset = CGPointMake(5, -5);
-                        view!.calloutOffset = CGPoint(x: 0, y: 15)
+                        view!.calloutOffset = CGPoint(x: -1, y: 0)
                         view!.canShowCallout = true
+                        view!.alpha = 0.75
                     }
                 }
             }
@@ -138,9 +140,13 @@ extension ViewController: MKMapViewDelegate {
             }
             
             
+            if initialLocation.distanceFromLocation(CLLocation(latitude: 40.001894, longitude: -105.260184)) < 32186 {
+                centerMapOnLocation(initialLocation)
+            }
             
-            centerMapOnLocation(initialLocation)
-
+            else {
+                centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
+            }
             
             UIPicker.selectRow(pickerStartingLocation!, inComponent: 0, animated: false)
             
@@ -164,7 +170,7 @@ extension ViewController: MKMapViewDelegate {
             // polyLineRenderer.strokeColor = UIColor.yellowColor()
             switch routeNumber {
             case 1:
-                polyLineRenderer.strokeColor = UIColor.yellowColor()
+                polyLineRenderer.strokeColor = UIColor.blueColor()
             case 6:
                 polyLineRenderer.strokeColor = UIColor.orangeColor()
             case 7:
@@ -178,11 +184,11 @@ extension ViewController: MKMapViewDelegate {
             case 9:
                 polyLineRenderer.strokeColor = UIColor.blueColor()
             case 8:
-                polyLineRenderer.strokeColor = UIColor.yellowColor()
+                polyLineRenderer.strokeColor = UIColor.blueColor()
             case 2:
-                polyLineRenderer.strokeColor = UIColor.yellowColor()
+                polyLineRenderer.strokeColor = UIColor.blueColor()
             default:
-                polyLineRenderer.strokeColor = UIColor.yellowColor()
+                polyLineRenderer.strokeColor = UIColor.blueColor()
             }
             
             polyLineRenderer.lineWidth = 3.0

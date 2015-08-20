@@ -39,14 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E4709EC1B51AD6000E95354 /* BuffBus4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuffBus4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4709EC1B51AD6000E95354 /* CUBusTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUBusTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4709F01B51AD6000E95354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E4709F11B51AD6000E95354 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E4709F31B51AD6000E95354 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2E4709F61B51AD6000E95354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E4709F81B51AD6000E95354 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E4709FB1B51AD6000E95354 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2E470A011B51AD6000E95354 /* BuffBus4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuffBus4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E470A011B51AD6000E95354 /* CUBusTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUBusTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E470A061B51AD6000E95354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E470A071B51AD6000E95354 /* BuffBus4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffBus4Tests.swift; sourceTree = "<group>"; };
 		2E4DF10B1B6862FC005150E3 /* routeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = routeInfo.swift; sourceTree = "<group>"; };
@@ -94,8 +94,8 @@
 		2E4709ED1B51AD6000E95354 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E4709EC1B51AD6000E95354 /* BuffBus4.app */,
-				2E470A011B51AD6000E95354 /* BuffBus4Tests.xctest */,
+				2E4709EC1B51AD6000E95354 /* CUBusTracker.app */,
+				2E470A011B51AD6000E95354 /* CUBusTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,9 +178,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E4709EB1B51AD6000E95354 /* BuffBus4 */ = {
+		2E4709EB1B51AD6000E95354 /* CUBusTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E470A0B1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "BuffBus4" */;
+			buildConfigurationList = 2E470A0B1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "CUBusTracker" */;
 			buildPhases = (
 				2E4709E81B51AD6000E95354 /* Sources */,
 				2E4709E91B51AD6000E95354 /* Frameworks */,
@@ -190,14 +190,14 @@
 			);
 			dependencies = (
 			);
-			name = BuffBus4;
+			name = CUBusTracker;
 			productName = BuffBus4;
-			productReference = 2E4709EC1B51AD6000E95354 /* BuffBus4.app */;
+			productReference = 2E4709EC1B51AD6000E95354 /* CUBusTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2E470A001B51AD6000E95354 /* BuffBus4Tests */ = {
+		2E470A001B51AD6000E95354 /* CUBusTrackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E470A0E1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "BuffBus4Tests" */;
+			buildConfigurationList = 2E470A0E1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "CUBusTrackerTests" */;
 			buildPhases = (
 				2E4709FD1B51AD6000E95354 /* Sources */,
 				2E4709FE1B51AD6000E95354 /* Frameworks */,
@@ -208,9 +208,9 @@
 			dependencies = (
 				2E470A031B51AD6000E95354 /* PBXTargetDependency */,
 			);
-			name = BuffBus4Tests;
+			name = CUBusTrackerTests;
 			productName = BuffBus4Tests;
-			productReference = 2E470A011B51AD6000E95354 /* BuffBus4Tests.xctest */;
+			productReference = 2E470A011B51AD6000E95354 /* CUBusTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -232,7 +232,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2E4709E71B51AD6000E95354 /* Build configuration list for PBXProject "BuffBus4" */;
+			buildConfigurationList = 2E4709E71B51AD6000E95354 /* Build configuration list for PBXProject "CUBusTracker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -245,8 +245,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E4709EB1B51AD6000E95354 /* BuffBus4 */,
-				2E470A001B51AD6000E95354 /* BuffBus4Tests */,
+				2E4709EB1B51AD6000E95354 /* CUBusTracker */,
+				2E470A001B51AD6000E95354 /* CUBusTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +307,7 @@
 /* Begin PBXTargetDependency section */
 		2E470A031B51AD6000E95354 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2E4709EB1B51AD6000E95354 /* BuffBus4 */;
+			target = 2E4709EB1B51AD6000E95354 /* CUBusTracker */;
 			targetProxy = 2E470A021B51AD6000E95354 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -422,7 +422,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CUBusTracker;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -437,7 +437,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CUBusTracker;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -456,7 +456,7 @@
 				);
 				INFOPLIST_FILE = BuffBus4Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CUBusTrackerTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffBus4.app/BuffBus4";
 			};
 			name = Debug;
@@ -471,7 +471,7 @@
 				);
 				INFOPLIST_FILE = BuffBus4Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CUBusTrackerTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffBus4.app/BuffBus4";
 			};
 			name = Release;
@@ -479,7 +479,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E4709E71B51AD6000E95354 /* Build configuration list for PBXProject "BuffBus4" */ = {
+		2E4709E71B51AD6000E95354 /* Build configuration list for PBXProject "CUBusTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E470A091B51AD6000E95354 /* Debug */,
@@ -488,7 +488,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E470A0B1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "BuffBus4" */ = {
+		2E470A0B1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "CUBusTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E470A0C1B51AD6000E95354 /* Debug */,
@@ -497,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E470A0E1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "BuffBus4Tests" */ = {
+		2E470A0E1B51AD6000E95354 /* Build configuration list for PBXNativeTarget "CUBusTrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2E470A0F1B51AD6000E95354 /* Debug */,

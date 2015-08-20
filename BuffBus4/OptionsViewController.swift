@@ -21,6 +21,7 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var lngButton: UIButton!
     @IBOutlet weak var athensButton: UIButton!
     
+    @IBOutlet weak var feedbackButton: UIButton!
     
     @IBOutlet weak var buffBusInfo: UIButton!
     @IBOutlet weak var hopCInfo: UIButton!
@@ -43,8 +44,9 @@ class OptionsViewController: UIViewController {
     
     override func viewDidLoad() {
         buttons = [buffButton,hopCButton,hopCCButton,lnbButton,lnsButton,lngButton,athensButton]
-        infoButtons = [hopCInfo,hopCCInfo,lnbInfo,lnsInfo,lngInfo,athensInfo,buffBusInfo]
-        
+//        infoButtons = [hopCInfo,hopCCInfo,lnbInfo,lnsInfo,lngInfo,athensInfo,buffBusInfo]
+        feedbackButton.addTarget(self, action: "feedbackEmail:", forControlEvents: .TouchUpInside)
+
         spinner.startAnimating()
         for button in buttons {
             button.hidden = true
@@ -64,25 +66,29 @@ class OptionsViewController: UIViewController {
         lngButton.tag = 3
         athensButton.tag = 9
         
-        hopCInfo.tag = 6
-        hopCCInfo.tag = 7
-        buffBusInfo.tag = 1
-        lnbInfo.tag = 4
-        lnsInfo.tag = 5
-        lngInfo.tag = 3
-        athensInfo.tag = 9
+//        hopCInfo.tag = 6
+//        hopCCInfo.tag = 7
+//        buffBusInfo.tag = 1
+//        lnbInfo.tag = 4
+//        lnsInfo.tag = 5
+//        lngInfo.tag = 3
+//        athensInfo.tag = 9
         
         for button in buttons {
             button.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
         }
         
-        for button in infoButtons {
-            button.addTarget(self, action: "infoButtonClicked:", forControlEvents: .TouchUpInside)
-        }
+//        for button in infoButtons {
+//            button.addTarget(self, action: "infoButtonClicked:", forControlEvents: .TouchUpInside)
+//        }
 
         getRoutes()
         getStops(self,nil)
         getBuses()
+    }
+    
+    func feedbackEmail( sender: AnyObject?) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "mailto:cherishdevapps@gmail.com")!)
     }
     
     func buttonClicked( sender: AnyObject?) {

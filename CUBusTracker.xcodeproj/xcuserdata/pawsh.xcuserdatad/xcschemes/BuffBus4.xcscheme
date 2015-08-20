@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E4709EB1B51AD6000E95354"
-               BuildableName = "BuffBus4.app"
-               BlueprintName = "BuffBus4"
-               ReferencedContainer = "container:BuffBus4.xcodeproj">
+               BuildableName = "CUBusTracker.app"
+               BlueprintName = "CUBusTracker"
+               ReferencedContainer = "container:CUBusTracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E470A001B51AD6000E95354"
-               BuildableName = "BuffBus4Tests.xctest"
-               BlueprintName = "BuffBus4Tests"
-               ReferencedContainer = "container:BuffBus4.xcodeproj">
+               BuildableName = "CUBusTrackerTests.xctest"
+               BlueprintName = "CUBusTrackerTests"
+               ReferencedContainer = "container:CUBusTracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2E470A001B51AD6000E95354"
-               BuildableName = "BuffBus4Tests.xctest"
-               BlueprintName = "BuffBus4Tests"
-               ReferencedContainer = "container:BuffBus4.xcodeproj">
+               BuildableName = "CUBusTrackerTests.xctest"
+               BlueprintName = "CUBusTrackerTests"
+               ReferencedContainer = "container:CUBusTracker.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E4709EB1B51AD6000E95354"
-            BuildableName = "BuffBus4.app"
-            BlueprintName = "BuffBus4"
-            ReferencedContainer = "container:BuffBus4.xcodeproj">
+            BuildableName = "CUBusTracker.app"
+            BlueprintName = "CUBusTracker"
+            ReferencedContainer = "container:CUBusTracker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E4709EB1B51AD6000E95354"
-            BuildableName = "BuffBus4.app"
-            BlueprintName = "BuffBus4"
-            ReferencedContainer = "container:BuffBus4.xcodeproj">
+            BuildableName = "CUBusTracker.app"
+            BlueprintName = "CUBusTracker"
+            ReferencedContainer = "container:CUBusTracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2E4709EB1B51AD6000E95354"
-            BuildableName = "BuffBus4.app"
-            BlueprintName = "BuffBus4"
-            ReferencedContainer = "container:BuffBus4.xcodeproj">
+            BuildableName = "CUBusTracker.app"
+            BlueprintName = "CUBusTracker"
+            ReferencedContainer = "container:CUBusTracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -106,7 +106,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

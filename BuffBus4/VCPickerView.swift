@@ -16,6 +16,7 @@ extension ViewController {
         return 1
     }
     
+
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return stops.count;
     }

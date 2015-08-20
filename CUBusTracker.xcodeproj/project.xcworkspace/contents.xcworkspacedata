@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:BuffBus4.xcodeproj">
+      location = "self:/Users/pawsh/Desktop/BusApp/CUBusTracker.xcodeproj">
    </FileRef>
 </Workspace>
