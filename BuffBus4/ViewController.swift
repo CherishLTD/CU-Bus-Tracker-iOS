@@ -64,7 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         var i = 0
-        for stop in stopinfo  {
+        for stop in stopinfo!  {
             if contains(testRoute.stops,stop.id) {
                 stopDict[stop.title] = stop
                 stops.append(stop.title)
@@ -176,7 +176,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func updateStops() {
         
         var stopinfo = APIManager.sharedInstance.getStops()
-        for stop in stopinfo  {
+        for stop in stopinfo!  {
             if contains(testRoute.stops,stop.id) {
                 stopDict[stop.title] = stop
             }
@@ -212,7 +212,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func plotStops() {
         
-        for stop in APIManager.sharedInstance.getStops() {
+        for stop in APIManager.sharedInstance.getStops()! {
             if contains(testRoute.stops,stop.id) {
                 mapView.addAnnotation(stop)
             }
@@ -248,6 +248,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 timeLabel.text = "No Buses Currently Running"
                 next.hidden = true
             }
+            else if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] == 1 {
+                timeLabel.text = "1 Minute"
+                next.hidden = false
+            }
+                
             else if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] == 0 {
                 timeLabel.text = "Less than a minute"
                 next.hidden = false
@@ -265,11 +270,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     timeLabel2.text = "Less than a minute"
                     
                 }
+                if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] == 1 {
+                    timeLabel.text = "1 Minute"
+                    next.hidden = false
+                }
                 if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] < 0 {
                     timeLabel2.text = ""
-                    
-                    
                 }
+                
                 else {
                     var test = stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1]
                     

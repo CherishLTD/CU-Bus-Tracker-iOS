@@ -47,13 +47,29 @@ class OptionsViewController: UIViewController {
 //        infoButtons = [hopCInfo,hopCCInfo,lnbInfo,lnsInfo,lngInfo,athensInfo,buffBusInfo]
         feedbackButton.addTarget(self, action: "feedbackEmail:", forControlEvents: .TouchUpInside)
 
-        spinner.startAnimating()
-        for button in buttons {
-            button.hidden = true
+        
+        
+        if APIManager.sharedInstance.getStops() == nil {
+            for button in buttons {
+                button.hidden = true
+            }
+            for button in infoButtons {
+                button.hidden = true
+            }
+            
+            spinner.startAnimating()
+            getRoutes()
+            getStops(self,nil)
         }
-        for button in infoButtons {
-            button.hidden = true
+        else {
+            spinner.stopAnimating()
+            self.showButtons()
         }
+        
+        
+        getBuses()
+        
+        
         super.viewDidLoad()
         
         
@@ -82,9 +98,7 @@ class OptionsViewController: UIViewController {
 //            button.addTarget(self, action: "infoButtonClicked:", forControlEvents: .TouchUpInside)
 //        }
 
-        getRoutes()
-        getStops(self,nil)
-        getBuses()
+        
     }
     
     func feedbackEmail( sender: AnyObject?) {
@@ -93,9 +107,52 @@ class OptionsViewController: UIViewController {
     
     func buttonClicked( sender: AnyObject?) {
         
-        if sender!.tag != nil {
+        if sender!.tag != nil && sender!.tag != 1 {
             routeNumber = sender!.tag
-        }else {
+        }
+        
+        else if sender!.tag == 1 {
+            var isThereABuffBus = false
+            for bus in APIManager.sharedInstance.getBuses() {
+                if bus.routeID == 1 {
+                    isThereABuffBus = true
+                }
+                
+            }
+            if !isThereABuffBus {
+                var isThereABuffBusFootball = false
+                for bus in APIManager.sharedInstance.getBuses() {
+                    if bus.routeID == 2 {
+                        isThereABuffBusFootball = true
+                    }
+                }
+                if isThereABuffBusFootball {
+                    routeNumber = 2
+                }
+                
+                else {
+                    var isThereABuffBusBasketball = false
+                    for bus in APIManager.sharedInstance.getBuses() {
+                        if bus.routeID == 8 {
+                            isThereABuffBusBasketball = true
+                        }
+                    }
+                    if isThereABuffBusBasketball {
+                        routeNumber = 8
+                    }
+                    else {
+                        routeNumber = 1
+                    }
+                    
+                }
+            }
+            else {
+                routeNumber = 1
+            }
+            
+        }
+        
+        else {
             println("The sender tag was nil")
         }
         

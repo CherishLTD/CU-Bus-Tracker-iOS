@@ -39,8 +39,8 @@ class APIManager : NSObject {
     func getRoutes() -> [Route] {
         return self.routes!
     }
-    func getStops() -> [Stop] {
-        return self.stops!
+    func getStops() -> [Stop]? {
+        return self.stops
     }
     func setStops(newStops:[Stop]) {
         self.stops = newStops

@@ -102,7 +102,7 @@ extension ViewController: MKMapViewDelegate {
         if first == 0 {
             closestStop = ("",10000000.00)
             var i = 0
-            for stop in stopinfo  {
+            for stop in stopinfo!  {
                 if contains(testRoute.stops,stop.id) {
                     
                     var loc2 = CLLocation(latitude: stop.coordinate.latitude, longitude: stop.coordinate.longitude)
@@ -121,7 +121,7 @@ extension ViewController: MKMapViewDelegate {
                 
             }
             
-            for stop in stopinfo {
+            for stop in stopinfo! {
                 
                 if stop.title == closestStopTitle! {
                     stop.setNewSubtitle("Nearest Stop")
