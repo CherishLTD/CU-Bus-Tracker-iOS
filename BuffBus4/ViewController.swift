@@ -33,6 +33,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var closestStopTitle : String?
     
+    var center = true
     
     var currentPickerLocation : Int?
     var getInfoTimer : NSTimer!
@@ -49,7 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         
-        
+        UIPicker.transform = CGAffineTransformMakeScale(0.8, 0.8);
         mapView.delegate = self
         mapView.showsPointsOfInterest = false
         
@@ -65,10 +66,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         var i = 0
         for stop in stopinfo!  {
-            if contains(testRoute.stops,stop.id) {
-                stopDict[stop.title] = stop
-                stops.append(stop.title)
-                TitleToIndex[stop.title] = i
+            if testRoute.stops.contains(stop.id) {
+                stopDict[stop.title!] = stop
+                stops.append(stop.title!)
+                TitleToIndex[stop.title!] = i
                 i+=1
             }
         }
@@ -82,7 +83,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         mapView.showsUserLocation = true
         
-      
+        var getLocationTimer = NSTimer.scheduledTimerWithTimeInterval(300.0, target: self, selector: Selector("updateGPS"), userInfo: nil, repeats: true)
         
         
         
@@ -145,20 +146,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             addRoute(athensRoute)
         case 8:
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                println("test")
+                print("test")
                 centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
             }
             routeLabel.text = "Buff Bus Basketball"
             addRoute(basketballRoute)
         case 2:
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                println("test")
+                print("test")
                 centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
             }
             routeLabel.text = "Buff Bus Football"
             addRoute(footballRoute)
         default:
-            println("error")
+            print("error")
         }
     }
     
@@ -177,8 +178,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         var stopinfo = APIManager.sharedInstance.getStops()
         for stop in stopinfo!  {
-            if contains(testRoute.stops,stop.id) {
-                stopDict[stop.title] = stop
+            if testRoute.stops.contains(stop.id) {
+                stopDict[stop.title!] = stop
             }
             if let closestStopTitle = closestStopTitle as String! {
                 if stop.title == closestStopTitle {
@@ -195,11 +196,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func plotNewBuses() {
-        getStops(self,updateStops)
+        getStops(self,callback: updateStops)
         
         getBuses()
         
-        let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation && !contains(self.stops,$0.title) }
+        let annotationsToRemove = mapView.annotations.filter { $0 !== self.mapView.userLocation && !self.stops.contains($0.title!!) }
         mapView.removeAnnotations(annotationsToRemove)
         var buses = APIManager.sharedInstance.getBuses()
         for bus in buses {
@@ -213,7 +214,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func plotStops() {
         
         for stop in APIManager.sharedInstance.getStops()! {
-            if contains(testRoute.stops,stop.id) {
+            if testRoute.stops.contains(stop.id) {
                 mapView.addAnnotation(stop)
             }
         }
@@ -237,6 +238,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         getInfoTimer.invalidate()
         
     }
+    func updateGPS() {
+//        self.center = false
+        first = 0
+        updateStops()
+        
+        
+    }
     
 
     func updateTimes(row: Int) {
@@ -245,8 +253,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             
             if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] < 0 {
-                timeLabel.text = "No Buses Currently Running"
-                next.hidden = true
+                timeLabel.text = "No Buses Running"
+                next.hidden = false
             }
             else if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] == 1 {
                 timeLabel.text = "1 Minute"
@@ -270,7 +278,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     timeLabel2.text = "Less than a minute"
                     
                 }
-                if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![0] == 1 {
+                if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] == 1 {
                     timeLabel.text = "1 Minute"
                     next.hidden = false
                 }
@@ -289,9 +297,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         else {
-            timeLabel.text = "No Buses Currently Running"
+            timeLabel.text = "No Buses Running"
             timeLabel2.text = ""
-            next.hidden = true
+            next.hidden = false
         }
         
     }

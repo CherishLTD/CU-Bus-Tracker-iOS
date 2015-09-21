@@ -13,10 +13,11 @@ func getRoutes() -> [Route] {
     
     let url = NSURL(string: "http://104.131.176.10:8080/routes")
     var routes = [Route]()
+    let options = NSJSONReadingOptions(rawValue: 0);
 
     let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
         var jsonError: NSError?
-        if let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? [[String: AnyObject]]
+        if let json = try! NSJSONSerialization.JSONObjectWithData(data!, options:options ) as? [[String: AnyObject]]
         {
             let RouteInfo = json
             for route in RouteInfo {
@@ -29,6 +30,7 @@ func getRoutes() -> [Route] {
                 
             }
         }
+        
         APIManager.sharedInstance.setRoutes(routes)
         
       

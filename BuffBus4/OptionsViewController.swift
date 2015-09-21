@@ -38,6 +38,8 @@ class OptionsViewController: UIViewController {
         performSegueWithIdentifier("ViewController", sender: self)
     }
     
+    
+    
     var buttons = [UIButton]()
     
     var infoButtons = [UIButton]()
@@ -59,7 +61,7 @@ class OptionsViewController: UIViewController {
             
             spinner.startAnimating()
             getRoutes()
-            getStops(self,nil)
+            getStops(self,callback: nil)
         }
         else {
             spinner.stopAnimating()
@@ -153,7 +155,7 @@ class OptionsViewController: UIViewController {
         }
         
         else {
-            println("The sender tag was nil")
+            print("The sender tag was nil")
         }
         
         performSegueWithIdentifier("mainSegue", sender: self)
@@ -164,7 +166,7 @@ class OptionsViewController: UIViewController {
         if sender!.tag != nil {
             routeNumber = sender!.tag
         }else {
-            println("The sender tag was nil")
+            print("The sender tag was nil")
         }
         
         performSegueWithIdentifier("goToInfo", sender: self)

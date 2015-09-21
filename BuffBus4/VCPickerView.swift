@@ -29,9 +29,9 @@ extension ViewController {
         updateTimes(row)
         
         for annotation1 in mapView.annotations {
-            if annotation1.title == stops[row] {
+            if annotation1.title! == stops[row] {
                 let annotation1 = annotation1 as? MKAnnotation
-                mapView.selectAnnotation(annotation1, animated:true)
+                mapView.selectAnnotation(annotation1!, animated:true)
             }
         
         }

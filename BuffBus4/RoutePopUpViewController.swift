@@ -33,7 +33,7 @@ class RoutePopUpViewController: UIViewController {
         case 3:
             infoText.text = "No info at this time."
         default:
-            println("NOPE")
+            print("NOPE")
         }
     }
     

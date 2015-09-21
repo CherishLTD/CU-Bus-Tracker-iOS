@@ -11,8 +11,8 @@ import MapKit
 
 
 class Bus: NSObject, MKAnnotation {
-    let title: String
-    let subtitle: String
+    let title: String?
+    let subtitle: String?
     let locationName: String
     let coordinate: CLLocationCoordinate2D
     let routeID: Int

@@ -14,8 +14,8 @@ import CoreLocation
 extension ViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        if contains(stops,view.annotation.title!) {
-        currentPickerLocation = TitleToIndex[view.annotation.title!]
+        if stops.contains(view.annotation!.title!!) {
+        currentPickerLocation = TitleToIndex[view.annotation!.title!!]
         UIPicker.selectRow(currentPickerLocation!, inComponent: 0, animated: true)
         updateTimes(currentPickerLocation!)
             
@@ -23,7 +23,7 @@ extension ViewController: MKMapViewDelegate {
         
     }
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         var view : MKAnnotationView?
 
         if annotation is MKUserLocation {
@@ -40,11 +40,11 @@ extension ViewController: MKMapViewDelegate {
         }
         
         if isBus == false {
-            if annotation.title != closestStopTitle {
+            if annotation.title! != closestStopTitle {
                 view = mapView.dequeueReusableAnnotationViewWithIdentifier("stop")
             }
             else {
-                if annotation.subtitle != "" {
+                if annotation.subtitle! != "" {
                 view = mapView.dequeueReusableAnnotationViewWithIdentifier("closestStop")
                 }
             }
@@ -63,7 +63,7 @@ extension ViewController: MKMapViewDelegate {
                 }
             }
             if isBus == false {
-                if annotation.title != closestStopTitle {
+                if annotation.title! != closestStopTitle {
                 view = MKAnnotationView(annotation: annotation, reuseIdentifier: "stop")
                 view!.image = UIImage(named: "gold_BlackBorder.png")
                 view!.centerOffset = CGPointMake(5, -5);
@@ -72,7 +72,7 @@ extension ViewController: MKMapViewDelegate {
                 view!.alpha = 0.75
                 }
                 else {
-                    if annotation.title == closestStopTitle {
+                    if annotation.title! == closestStopTitle {
                     
                         view = MKAnnotationView(annotation: annotation, reuseIdentifier: "closestStop")
                         view!.image = UIImage(named: "red+gold.png")
@@ -96,14 +96,22 @@ extension ViewController: MKMapViewDelegate {
     }
     
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         initialLocation = locations[0] as! CLLocation
         
         if first == 0 {
+            
+            if self.center == false {
+                
+            }
+            
+            var oldClosestStopTitle = closestStopTitle
+         
+            
             closestStop = ("",10000000.00)
             var i = 0
             for stop in stopinfo!  {
-                if contains(testRoute.stops,stop.id) {
+                if testRoute.stops.contains(stop.id) {
                     
                     var loc2 = CLLocation(latitude: stop.coordinate.latitude, longitude: stop.coordinate.longitude)
                     
@@ -112,7 +120,7 @@ extension ViewController: MKMapViewDelegate {
                     if closestStop?.Distance > Float(distance){
                         closestStopTitle = stop.title
                         pickerStartingLocation = i
-                        closestStop = (stop.title,Float(distance))
+                        closestStop = (stop.title!,Float(distance))
                     }
                     
                     i = i + 1
@@ -120,33 +128,42 @@ extension ViewController: MKMapViewDelegate {
                 }
                 
             }
+       
             
             for stop in stopinfo! {
-                
-                if stop.title == closestStopTitle! {
-                    stop.setNewSubtitle("Nearest Stop")
-                    var annotationsRemove = mapView.annotations.filter { $0.title == self.closestStopTitle  }
+                if stop.title == oldClosestStopTitle {
+                    stop.setNewSubtitle("")
+                    var annotationsRemove = mapView.annotations.filter { $0.title! == oldClosestStopTitle }
                     mapView.removeAnnotations( annotationsRemove)
                     mapView.addAnnotation(stop)
                 }
+                
+                if stop.title == closestStopTitle! {
+                    stop.setNewSubtitle("Nearest Stop")
+                    var annotationsRemove = mapView.annotations.filter { $0.title! == self.closestStopTitle  }
+                    mapView.removeAnnotations( annotationsRemove)
+                    mapView.addAnnotation(stop)
+                }
+                
             }
             
             for annotation1 in mapView.annotations {
-                if annotation1.title == closestStopTitle {
+                if annotation1.title! == closestStopTitle {
                     let annotation1 = annotation1 as? MKAnnotation
-                    mapView.selectAnnotation(annotation1, animated:true)
+                    mapView.selectAnnotation(annotation1!, animated:true)
                 }
                 
             }
             
             
-            if initialLocation.distanceFromLocation(CLLocation(latitude: 40.001894, longitude: -105.260184)) < 32186 {
-                centerMapOnLocation(initialLocation)
-            }
+                if initialLocation.distanceFromLocation(CLLocation(latitude: 40.001894, longitude: -105.260184)) < 32186 {
+                    centerMapOnLocation(initialLocation)
+                }
+                
+                else {
+                    centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
+                }
             
-            else {
-                centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
-            }
             
             UIPicker.selectRow(pickerStartingLocation!, inComponent: 0, animated: false)
             
@@ -157,8 +174,8 @@ extension ViewController: MKMapViewDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println(error)
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
     }
     
     

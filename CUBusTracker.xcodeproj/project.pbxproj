@@ -104,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				591290AC1B6C6D7300CD9F21 /* Model */,
-				2E4709F11B51AD6000E95354 /* AppDelegate.swift */,
 				591290AE1B6C6F2C00CD9F21 /* Controller */,
+				2E4709F11B51AD6000E95354 /* AppDelegate.swift */,
 				591290AD1B6C6F0500CD9F21 /* View */,
 				2E4709FA1B51AD6000E95354 /* LaunchScreen.xib */,
 				2E4709EF1B51AD6000E95354 /* Supporting Files */,
@@ -219,7 +219,8 @@
 		2E4709E41B51AD6000E95354 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Joshua Ferge";
 				TargetAttributes = {
 					2E4709EB1B51AD6000E95354 = {
@@ -353,6 +354,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -422,6 +424,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ".com.cherish.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CUBusTracker;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -437,6 +440,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BuffBus4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ".com.cherish.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CUBusTracker;
 				PROVISIONING_PROFILE = "";
 			};
@@ -456,6 +460,7 @@
 				);
 				INFOPLIST_FILE = BuffBus4Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Pawsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CUBusTrackerTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffBus4.app/BuffBus4";
 			};
@@ -471,6 +476,7 @@
 				);
 				INFOPLIST_FILE = BuffBus4Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Pawsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CUBusTrackerTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffBus4.app/BuffBus4";
 			};

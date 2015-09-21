@@ -14,9 +14,10 @@ func getBuses() -> [Bus] {
     
     let url = NSURL(string: "http://104.131.176.10:8080/buses")
     var buses = [Bus]()
+    let options = NSJSONReadingOptions(rawValue: 0);
     let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             var jsonError: NSError?
-            if let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? [[String: AnyObject]]
+        if let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: options) as? [[String: AnyObject]]
                 //        var BusInfo = json["BusInfo"] as? [String: AnyObject] {
             {
                 let BusInfo = json
@@ -41,7 +42,7 @@ func getBuses() -> [Bus] {
 
 func parseJSON(inputData: NSData) -> NSDictionary{
     var error: NSError?
-    var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
+    var boardsDictionary: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
     
     return boardsDictionary
 }
