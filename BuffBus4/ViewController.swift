@@ -37,6 +37,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var currentPickerLocation : Int?
     var getInfoTimer : NSTimer!
+    var getLocationTimer : NSTimer!
     var routes = APIManager.sharedInstance.getRoutes()
     var testRoute : Route!
     var routeNumber = 0
@@ -83,7 +84,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         mapView.showsUserLocation = true
         
-        var getLocationTimer = NSTimer.scheduledTimerWithTimeInterval(300.0, target: self, selector: Selector("updateGPS"), userInfo: nil, repeats: true)
+        getLocationTimer = NSTimer.scheduledTimerWithTimeInterval(65.0, target: self, selector: Selector("updateGPS"), userInfo: nil, repeats: true)
         
         
         
@@ -146,14 +147,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             addRoute(athensRoute)
         case 8:
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                print("test")
                 centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
             }
             routeLabel.text = "Buff Bus Basketball"
             addRoute(basketballRoute)
         case 2:
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                print("test")
                 centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
             }
             routeLabel.text = "Buff Bus Football"
@@ -233,9 +232,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.addOverlay(myPolyline)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    
+    override func viewWillDisappear(animated: Bool) {
         closestStopTitle = nil
+        getLocationTimer.invalidate()
         getInfoTimer.invalidate()
+        mapView.removeFromSuperview()
+        self.dismissViewControllerAnimated(true, completion: {});
+        
+    }
+    override func viewDidDisappear(animated: Bool) {
+        
+        
+        
         
     }
     func updateGPS() {

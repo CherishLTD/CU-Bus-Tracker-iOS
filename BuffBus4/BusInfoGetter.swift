@@ -16,7 +16,12 @@ func getBuses() -> [Bus] {
     var buses = [Bus]()
     let options = NSJSONReadingOptions(rawValue: 0);
     let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            var jsonError: NSError?
+        if (error != nil) {
+            sleep(2)
+            getBuses()
+            return
+        }
+        do {
         if let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: options) as? [[String: AnyObject]]
                 //        var BusInfo = json["BusInfo"] as? [String: AnyObject] {
             {
@@ -31,6 +36,8 @@ func getBuses() -> [Bus] {
                         buses.append(b)
                     }
                 }
+        }
+        catch {print("HI")}
         APIManager.sharedInstance.setBuses(buses)
     }
     
