@@ -11,7 +11,7 @@ import Foundation
 
 func getRoutes() -> [Route] {
     
-    let url = NSURL(string: "http://104.131.176.10:8080/routes")
+    let url = NSURL(string: "http://cherishapps.me:8080/routes")
     var routes = [Route]()
     let options = NSJSONReadingOptions(rawValue: 0);
 

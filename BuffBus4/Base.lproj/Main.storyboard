@@ -301,11 +301,8 @@
                                 <state key="normal" title="‹">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ZPf-rq-rQ5" kind="show" id="yrh-t6-LEn"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2 Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zL-aW-Elz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zL-aW-Elz">
                                 <rect key="frame" x="270" y="204" width="280" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="Qq1-2f-pTO"/>
@@ -335,7 +332,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 Minute" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncl-iv-u2X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncl-iv-u2X">
                                 <rect key="frame" x="116" y="169" width="468" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2000" id="Ck5-pg-sEz"/>
@@ -418,6 +415,7 @@
                     </view>
                     <connections>
                         <outlet property="UIPicker" destination="nsW-dT-2av" id="ibG-NE-evi"/>
+                        <outlet property="backButton" destination="Csf-Jg-IJ7" id="8MJ-gu-TZH"/>
                         <outlet property="mapView" destination="49N-Zc-lhm" id="bBe-ZX-bne"/>
                         <outlet property="next" destination="Geq-qa-eBv" id="Lyl-6y-Ir1"/>
                         <outlet property="routeLabel" destination="6EF-Ms-W3P" id="XPl-3d-TIx"/>

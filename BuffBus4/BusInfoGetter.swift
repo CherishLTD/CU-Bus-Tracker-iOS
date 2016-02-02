@@ -12,7 +12,7 @@ import MapKit
 
 func getBuses() -> [Bus] {
     
-    let url = NSURL(string: "http://104.131.176.10:8080/buses")
+    let url = NSURL(string: "http://cherishapps.me:8080/buses")
     var buses = [Bus]()
     let options = NSJSONReadingOptions(rawValue: 0);
     let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in

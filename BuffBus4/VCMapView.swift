@@ -98,8 +98,12 @@ extension ViewController: MKMapViewDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         initialLocation = locations[0] as! CLLocation
-        
         if first == 0 {
+            centerMapOnLocation(initialLocation)
+            first = first+1
+        }
+        
+        else if first == 4 {
             
             if self.center == false {
                 
@@ -169,6 +173,9 @@ extension ViewController: MKMapViewDelegate {
             
             currentPickerLocation = pickerStartingLocation!
             updateTimes(currentPickerLocation!)
+            first = first+1
+        }
+        else if first < 100 {
             first = first+1
         }
         

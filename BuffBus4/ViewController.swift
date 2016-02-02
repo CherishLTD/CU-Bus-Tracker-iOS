@@ -16,6 +16,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var routeLabel: UILabel!
     @IBOutlet weak var UIPicker: UIPickerView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -50,7 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     override func viewDidLoad() {
-        
+        backButton.addTarget(self, action: "remove:", forControlEvents: .TouchUpInside)
         UIPicker.transform = CGAffineTransformMakeScale(0.8, 0.8);
         mapView.delegate = self
         mapView.showsPointsOfInterest = false
@@ -237,21 +238,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         closestStopTitle = nil
         getLocationTimer.invalidate()
         getInfoTimer.invalidate()
-        mapView.removeFromSuperview()
-        self.dismissViewControllerAnimated(true, completion: {});
+
         
     }
-    override func viewDidDisappear(animated: Bool) {
-        
-        
-        
-        
-    }
+    
     func updateGPS() {
 //        self.center = false
         first = 0
         updateStops()
         
+        
+    }
+    
+    func remove(sender: AnyObject?) {
+        self.dismissViewControllerAnimated(false, completion: nil)
         
     }
     
@@ -287,11 +287,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     timeLabel2.text = "Less than a minute"
                     
                 }
-                if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] == 1 {
+                else if  stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] == 1 {
                     timeLabel.text = "1 Minute"
                     next.hidden = false
                 }
-                if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] < 0 {
+                else if stopDict[stops[row]]!.nextBusTimes[String(testRoute.id)]![1] < 0 {
                     timeLabel2.text = ""
                 }
                 
