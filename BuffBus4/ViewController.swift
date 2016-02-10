@@ -78,7 +78,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
@@ -158,6 +158,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
             routeLabel.text = "Buff Bus Football"
             addRoute(footballRoute)
+        case 11:
+            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
+                centerMapOnLocation(CLLocation(latitude: 40.008049, longitude: -105.257328))
+            }
+            routeLabel.text = "Discovery Express"
+            addRoute(discoveryExpress)
         default:
             print("error")
         }

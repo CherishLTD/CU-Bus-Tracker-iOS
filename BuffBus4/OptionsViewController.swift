@@ -22,6 +22,7 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var athensButton: UIButton!
     
     @IBOutlet weak var feedbackButton: UIButton!
+    @IBOutlet weak var discovExpress: UIButton!
     
     @IBOutlet weak var buffBusInfo: UIButton!
     @IBOutlet weak var hopCInfo: UIButton!
@@ -45,7 +46,7 @@ class OptionsViewController: UIViewController {
     var infoButtons = [UIButton]()
     
     override func viewDidLoad() {
-        buttons = [buffButton,hopCButton,hopCCButton,lnbButton,lnsButton,lngButton,athensButton]
+        buttons = [buffButton,hopCButton,hopCCButton,lnbButton,lnsButton,lngButton,athensButton,discovExpress]
 //        infoButtons = [hopCInfo,hopCCInfo,lnbInfo,lnsInfo,lngInfo,athensInfo,buffBusInfo]
         feedbackButton.addTarget(self, action: "feedbackEmail:", forControlEvents: .TouchUpInside)
 
@@ -83,6 +84,7 @@ class OptionsViewController: UIViewController {
         lnsButton.tag = 5
         lngButton.tag = 3
         athensButton.tag = 9
+        discovExpress.tag = 11
         
 //        hopCInfo.tag = 6
 //        hopCCInfo.tag = 7

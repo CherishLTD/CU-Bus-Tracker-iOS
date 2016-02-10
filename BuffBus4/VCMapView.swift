@@ -211,6 +211,8 @@ extension ViewController: MKMapViewDelegate {
                 polyLineRenderer.strokeColor = UIColor.blueColor()
             case 2:
                 polyLineRenderer.strokeColor = UIColor.blueColor()
+            case 9:
+                polyLineRenderer.strokeColor = UIColor.brownColor()
             default:
                 polyLineRenderer.strokeColor = UIColor.blueColor()
             }
