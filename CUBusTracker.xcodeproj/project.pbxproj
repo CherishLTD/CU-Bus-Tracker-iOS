@@ -468,7 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Pawsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CUBusTrackerTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffBus4.app/BuffBus4";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CUBusTracker.app/CUBusTracker";
 			};
 			name = Debug;
 		};
@@ -484,7 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Pawsh.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = CUBusTrackerTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuffBus4.app/BuffBus4";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CUBusTracker.app/CUBusTracker";
 			};
 			name = Release;
 		};

@@ -27,7 +27,7 @@ func getBuses() -> [Bus] {
             {
                 let BusInfo = json
                     for bus in BusInfo {
-                        var b = Bus(title: "bus",
+                        let b = Bus(title: "bus",
                             locationName:"",
                             coordinate: CLLocationCoordinate2D(latitude: bus["lat"] as! Double, longitude:bus["lng"] as! Double),
                             routeID:bus["routeID"] as! Int,
@@ -37,7 +37,7 @@ func getBuses() -> [Bus] {
                     }
                 }
         }
-        catch {print("HI")}
+        
         APIManager.sharedInstance.setBuses(buses)
     }
     
@@ -49,7 +49,7 @@ func getBuses() -> [Bus] {
 
 func parseJSON(inputData: NSData) -> NSDictionary{
     var error: NSError?
-    var boardsDictionary: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+    let boardsDictionary: NSDictionary = try! NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
     
     return boardsDictionary
 }

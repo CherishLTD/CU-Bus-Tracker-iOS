@@ -21,7 +21,8 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var lngButton: UIButton!
     @IBOutlet weak var athensButton: UIButton!
     
-    @IBOutlet weak var feedbackButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+//    @IBOutlet weak var feedbackButton: UIButton!
     @IBOutlet weak var discovExpress: UIButton!
     
     @IBOutlet weak var buffBusInfo: UIButton!
@@ -40,15 +41,32 @@ class OptionsViewController: UIViewController {
     }
     
     
-    
     var buttons = [UIButton]()
     
     var infoButtons = [UIButton]()
     
+    
+    
+    
+    
     override func viewDidLoad() {
-        buttons = [buffButton,hopCButton,hopCCButton,lnbButton,lnsButton,lngButton,athensButton,discovExpress]
+        self.scrollView.contentSize = CGSizeMake(300,660)
+        let bounds = self.view.bounds;
+        let label = UILabel(frame: CGRectMake(0, 0, 300, 50))
+        label.center = CGPointMake(CGRectGetMidX(bounds), 10);
+
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "CU Bus Tracker"
+        label.font = UIFont.systemFontOfSize(27,weight:400)
+        self.scrollView.addSubview(label)
+
+        
+        
+        
+        
+//        buttons = [buffButton,hopCButton,hopCCButton,lnbButton,lnsButton,lngButton,athensButton,discovExpress]
 //        infoButtons = [hopCInfo,hopCCInfo,lnbInfo,lnsInfo,lngInfo,athensInfo,buffBusInfo]
-        feedbackButton.addTarget(self, action: "feedbackEmail:", forControlEvents: .TouchUpInside)
+//        feedbackButton.addTarget(self, action: "feedbackEmail:", forControlEvents: .TouchUpInside)
 
         
         
@@ -63,6 +81,7 @@ class OptionsViewController: UIViewController {
             spinner.startAnimating()
             getRoutes()
             getStops(self,callback: nil)
+            
         }
         else {
             spinner.stopAnimating()
@@ -77,14 +96,14 @@ class OptionsViewController: UIViewController {
         
         
         
-        hopCButton.tag = 6
-        hopCCButton.tag = 7
-        buffButton.tag = 1
-        lnbButton.tag = 4
-        lnsButton.tag = 5
-        lngButton.tag = 3
-        athensButton.tag = 9
-        discovExpress.tag = 11
+//        hopCButton.tag = 6
+//        hopCCButton.tag = 7
+//        buffButton.tag = 1
+//        lnbButton.tag = 4
+//        lnsButton.tag = 5
+//        lngButton.tag = 3
+//        athensButton.tag = 9
+//        discovExpress.tag = 11
         
 //        hopCInfo.tag = 6
 //        hopCCInfo.tag = 7
@@ -176,6 +195,33 @@ class OptionsViewController: UIViewController {
     }
     
     func showButtons() {
+        sleep(2)
+        let routes = APIManager.sharedInstance.getRoutes();
+        var height = CGFloat(100.0)
+        for route in routes {
+            if ["Will Vill Football","Football Extension","Will Vill Basketball"].contains(route.name) {
+                
+            }
+            else {
+                let button  = UIButton(type: UIButtonType.System) as UIButton
+                let bounds = self.view.bounds
+                button.frame = CGRectMake(0, height, bounds.width, 50)
+                
+                button.center = CGPointMake(CGRectGetMidX(bounds), height);
+                height = height+53
+                button.tag = route.id
+                button.backgroundColor = UIColor.blackColor()
+                button.setTitleColor(UIColor(colorLiteralRed: 1.00, green: 0.975, blue: 0.616, alpha: 1.0), forState: UIControlState.Normal)
+                
+                button.setTitle(route.name, forState: UIControlState.Normal)
+                button.titleLabel!.font =  UIFont.systemFontOfSize(25,weight:300)
+                button.addTarget(self, action: "buttonClicked:", forControlEvents: .TouchUpInside)
+                
+                self.scrollView.addSubview(button)
+                buttons.append(button)
+            }
+        }
+        
         spinner.hidden = true
         for button in buttons {
             button.hidden = false
@@ -185,6 +231,15 @@ class OptionsViewController: UIViewController {
         }
     }
    
+            func getRandomColor() -> UIColor{
+            let randomRed:CGFloat = CGFloat(drand48())
+                let randomGreen:CGFloat = CGFloat(drand48())
+                let randomBlue:CGFloat = CGFloat(drand48())
+                return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+            }
+    
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "mainSegue" {

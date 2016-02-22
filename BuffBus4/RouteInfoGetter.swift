@@ -30,7 +30,7 @@ func getRoutes() -> [Route] {
                 let RouteInfo = json
                 
                 for route in RouteInfo! {
-                    var b = Route(
+                    let b = Route(
                         id:route["id"] as! Int,
                         name:route["name"] as! String,
                         stops:route["stops"] as! [Int]

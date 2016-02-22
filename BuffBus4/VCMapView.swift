@@ -109,7 +109,7 @@ extension ViewController: MKMapViewDelegate {
                 
             }
             
-            var oldClosestStopTitle = closestStopTitle
+            let oldClosestStopTitle = closestStopTitle
          
             
             closestStop = ("",10000000.00)
@@ -117,7 +117,7 @@ extension ViewController: MKMapViewDelegate {
             for stop in stopinfo!  {
                 if testRoute.stops.contains(stop.id) {
                     
-                    var loc2 = CLLocation(latitude: stop.coordinate.latitude, longitude: stop.coordinate.longitude)
+                    let loc2 = CLLocation(latitude: stop.coordinate.latitude, longitude: stop.coordinate.longitude)
                     
                     let distance = initialLocation.distanceFromLocation(loc2)
                     
@@ -137,14 +137,14 @@ extension ViewController: MKMapViewDelegate {
             for stop in stopinfo! {
                 if stop.title == oldClosestStopTitle {
                     stop.setNewSubtitle("")
-                    var annotationsRemove = mapView.annotations.filter { $0.title! == oldClosestStopTitle }
+                    let annotationsRemove = mapView.annotations.filter { $0.title! == oldClosestStopTitle }
                     mapView.removeAnnotations( annotationsRemove)
                     mapView.addAnnotation(stop)
                 }
                 
                 if stop.title == closestStopTitle! {
                     stop.setNewSubtitle("Nearest Stop")
-                    var annotationsRemove = mapView.annotations.filter { $0.title! == self.closestStopTitle  }
+                    let annotationsRemove = mapView.annotations.filter { $0.title! == self.closestStopTitle  }
                     mapView.removeAnnotations( annotationsRemove)
                     mapView.addAnnotation(stop)
                 }
