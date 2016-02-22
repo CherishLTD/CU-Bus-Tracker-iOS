@@ -11,7 +11,7 @@ import MapKit
 
 
 func getStops(view : UIViewController, callback: (() -> Void)?) -> [Stop] {
-    let url = NSURL(string: "http://cherishapps.me:8080/stops")
+    let url = NSURL(string: "http://localhost:3000/stops")
     var stops = [Stop]()
     let options = NSJSONReadingOptions(rawValue: 0);
     

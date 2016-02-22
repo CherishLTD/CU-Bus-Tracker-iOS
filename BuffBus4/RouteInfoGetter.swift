@@ -11,7 +11,7 @@ import Foundation
 
 func getRoutes() -> [Route] {
     
-    let url = NSURL(string: "http://cherishapps.me:8080/routes")
+    let url = NSURL(string: "http://localhost:3000/routes")
     var routes = [Route]()
     let options = NSJSONReadingOptions(rawValue: 0);
 
@@ -31,7 +31,7 @@ func getRoutes() -> [Route] {
                 
                 for route in RouteInfo! {
                     let b = Route(
-                        id:route["id"] as! Int,
+                        id:route["id"] as! String,
                         name:route["name"] as! String,
                         stops:route["stops"] as! [Int]
                     )
