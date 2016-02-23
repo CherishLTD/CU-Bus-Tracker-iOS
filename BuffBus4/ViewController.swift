@@ -41,7 +41,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var getLocationTimer : NSTimer!
     var routes = APIManager.sharedInstance.getRoutes()
     var testRoute : Route!
-    var routeNumber = 0
+    var routeNumber = " "
+    
     
     var buses = APIManager.sharedInstance.getBuses()
     
@@ -55,6 +56,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         UIPicker.transform = CGAffineTransformMakeScale(0.8, 0.8);
         mapView.delegate = self
         mapView.showsPointsOfInterest = false
+        routeLabel.text = routeNumber
         
         super.viewDidLoad()
         
@@ -95,78 +97,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         getInfoTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("plotNewBuses"), userInfo: nil, repeats: true)
         
-        switch routeNumber {
-        case 1:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                updateTimes(0)
-                centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
-            }
-            routeLabel.text = "Buff Bus"
-            addRoute(BuffBus)
-        case 6:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                updateTimes(0)
-                centerMapOnLocation(CLLocation(latitude: 40.013267, longitude: -105.271943))
-            }
-            routeLabel.text = "HOP Clockwise"
-            addRoute(hopClockwise)
-        case 7:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                updateTimes(0)
-                centerMapOnLocation(CLLocation(latitude: 40.013267, longitude: -105.271943))
-            }
-            routeLabel.text = "HOP Counterclockwise"
-            addRoute(hopCounterClockwise)
-        case 3:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                updateTimes(0)
-                centerMapOnLocation(CLLocation(latitude: 40.01152, longitude: -105.277179))
-            }
-            
-            routeLabel.text = "Late Night Gold"
-            addRoute(latenightGold)
-        case 4:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                updateTimes(0)
-                centerMapOnLocation(CLLocation(latitude: 40.00337, longitude: -105.275977))
-            }
-            routeLabel.text = "Late Night Black"
-            addRoute(lateNightBlack)
-        case 5:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                updateTimes(0)
-                centerMapOnLocation(CLLocation(latitude: 40.00337, longitude: -105.275977))
-            }
-            routeLabel.text = "Late Night Silver"
-            addRoute(latenightSilver)
-        case 9:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                updateTimes(0)
-                centerMapOnLocation(CLLocation(latitude: 40.010079, longitude: -105.270484))
-            }
-            routeLabel.text = "Athens Route"
-            addRoute(athensRoute)
-        case 8:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
-            }
-            routeLabel.text = "Buff Bus Basketball"
-            addRoute(basketballRoute)
-        case 2:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                centerMapOnLocation(CLLocation(latitude: 40.001894, longitude: -105.260184))
-            }
-            routeLabel.text = "Buff Bus Football"
-            addRoute(footballRoute)
-        case 11:
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                centerMapOnLocation(CLLocation(latitude: 40.008049, longitude: -105.257328))
-            }
-            routeLabel.text = "Discovery Express"
-            addRoute(discoveryExpress)
-        default:
-            print("error")
-        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {

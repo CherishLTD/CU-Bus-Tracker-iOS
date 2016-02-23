@@ -10,11 +10,11 @@ import Foundation
 
 
 class Route: NSObject {
-    let id: Int
+    let id: String
     let name: String
     let stops: [Int]
     
-    init (id:Int, name: String, stops:[Int]) {
+    init (id:String, name: String, stops:[Int]) {
         self.id = id
         self.name = name
         self.stops = stops

@@ -11,7 +11,7 @@ import UIKit
 
 
 class OptionsViewController: UIViewController {
-    var routeNumber = 1
+    var routeNumber = ""
 
     @IBOutlet weak var buffButton: UIButton!
     @IBOutlet weak var hopCButton: UIButton!
@@ -50,13 +50,13 @@ class OptionsViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        self.scrollView.contentSize = CGSizeMake(300,660)
+        self.scrollView.contentSize = CGSizeMake(300,1060)
         let bounds = self.view.bounds;
         let label = UILabel(frame: CGRectMake(0, 0, 300, 50))
         label.center = CGPointMake(CGRectGetMidX(bounds), 10);
 
         label.textAlignment = NSTextAlignment.Center
-        label.text = "CU Bus Tracker"
+        label.text = "Boulder Bus Tracker"
         label.font = UIFont.systemFontOfSize(27,weight:400)
         self.scrollView.addSubview(label)
 
@@ -129,63 +129,14 @@ class OptionsViewController: UIViewController {
     }
     
     func buttonClicked( sender: AnyObject?) {
-        
-        if sender!.tag != nil && sender!.tag != 1 {
-            routeNumber = sender!.tag
-        }
-        
-        else if sender!.tag == 1 {
-            var isThereABuffBus = false
-            for bus in APIManager.sharedInstance.getBuses() {
-                if bus.routeID == 1 {
-                    isThereABuffBus = true
-                }
-                
-            }
-            if !isThereABuffBus {
-                var isThereABuffBusFootball = false
-                for bus in APIManager.sharedInstance.getBuses() {
-                    if bus.routeID == 2 {
-                        isThereABuffBusFootball = true
-                    }
-                }
-                if isThereABuffBusFootball {
-                    routeNumber = 2
-                }
-                
-                else {
-                    var isThereABuffBusBasketball = false
-                    for bus in APIManager.sharedInstance.getBuses() {
-                        if bus.routeID == 8 {
-                            isThereABuffBusBasketball = true
-                        }
-                    }
-                    if isThereABuffBusBasketball {
-                        routeNumber = 8
-                    }
-                    else {
-                        routeNumber = 1
-                    }
-                    
-                }
-            }
-            else {
-                routeNumber = 1
-            }
-            
-        }
-        
-        else {
-            print("The sender tag was nil")
-        }
-        
+        self.routeNumber = sender!.titleLabel!!.text!
         performSegueWithIdentifier("mainSegue", sender: self)
         
     }
     
     func infoButtonClicked( sender: AnyObject?) {
         if sender!.tag != nil {
-            routeNumber = sender!.tag
+
         }else {
             print("The sender tag was nil")
         }
@@ -209,7 +160,7 @@ class OptionsViewController: UIViewController {
                 
                 button.center = CGPointMake(CGRectGetMidX(bounds), height);
                 height = height+53
-                button.tag = route.id
+//                button.tag = route.id
                 button.backgroundColor = UIColor.blackColor()
                 button.setTitleColor(UIColor(colorLiteralRed: 1.00, green: 0.975, blue: 0.616, alpha: 1.0), forState: UIControlState.Normal)
                 
@@ -244,13 +195,7 @@ class OptionsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "mainSegue" {
             if let destination = segue.destinationViewController as? ViewController {
-                destination.routeNumber = routeNumber
-            }
-        }
-        
-        if segue.identifier == "goToInfo" {
-            if let destination = segue.destinationViewController as? RoutePopUpViewController {
-                destination.routeNumber = routeNumber
+                destination.routeNumber = sender!.routeNumber
             }
         }
     }

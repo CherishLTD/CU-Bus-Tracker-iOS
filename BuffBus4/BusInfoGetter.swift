@@ -30,7 +30,7 @@ func getBuses() -> [Bus] {
                         let b = Bus(title: "bus",
                             locationName:"",
                             coordinate: CLLocationCoordinate2D(latitude: bus["lat"] as! Double, longitude:bus["lng"] as! Double),
-                            routeID:bus["routeID"] as! Int,
+                            routeID:bus["routeID"] as! String,
                             inService: true
                         )
                         buses.append(b)

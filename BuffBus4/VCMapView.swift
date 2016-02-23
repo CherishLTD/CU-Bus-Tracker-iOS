@@ -187,41 +187,6 @@ extension ViewController: MKMapViewDelegate {
     
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if overlay.isKindOfClass(MKPolyline) {
-            // draw the track
-            let polyLine = overlay
-            let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
-            // polyLineRenderer.strokeColor = UIColor.yellowColor()
-            switch routeNumber {
-            case 1:
-                polyLineRenderer.strokeColor = UIColor.blueColor()
-            case 6:
-                polyLineRenderer.strokeColor = UIColor.orangeColor()
-            case 7:
-                polyLineRenderer.strokeColor = UIColor.purpleColor()
-            case 3:
-                polyLineRenderer.strokeColor = UIColor.yellowColor()
-            case 4:
-                polyLineRenderer.strokeColor = UIColor.blackColor()
-            case 5:
-                polyLineRenderer.strokeColor = UIColor.grayColor()
-            case 9:
-                polyLineRenderer.strokeColor = UIColor.blueColor()
-            case 8:
-                polyLineRenderer.strokeColor = UIColor.blueColor()
-            case 2:
-                polyLineRenderer.strokeColor = UIColor.blueColor()
-            case 9:
-                polyLineRenderer.strokeColor = UIColor.brownColor()
-            default:
-                polyLineRenderer.strokeColor = UIColor.blueColor()
-            }
-            
-            polyLineRenderer.lineWidth = 3.0
-            
-            return polyLineRenderer
-        }
-        
         return nil
     }
     

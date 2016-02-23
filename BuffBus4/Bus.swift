@@ -15,11 +15,11 @@ class Bus: NSObject, MKAnnotation {
     let subtitle: String?
     let locationName: String
     let coordinate: CLLocationCoordinate2D
-    let routeID: Int
+    let routeID: String
     let inService: Bool
     
     
-    init (title: String, locationName: String, coordinate: CLLocationCoordinate2D, routeID: Int, inService: Bool) {
+    init (title: String, locationName: String, coordinate: CLLocationCoordinate2D, routeID: String, inService: Bool) {
         self.title = title
         self.locationName = locationName
         self.coordinate = coordinate
